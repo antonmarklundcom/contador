@@ -18,7 +18,8 @@ Phase rules:
 
 Exit: `npm run verify` green (typecheck + lint + route smoke test asserting 200/301/410 per plan §5.1.6);
 `/` renders header, footer, WhatsApp FAB with 1b tokens; `/api/lead` returns 200 in degraded mode;
-GitHub Actions workflow runs verify+build on PRs; `.env.example`, `README.md`, `KNOWN-ISSUES.md` exist; PR merged.
+GitHub Actions workflow runs verify+build on PRs; `.env.example`, `README.md`, `KNOWN-ISSUES.md` exist;
+PREVIEW: Playwright screenshots of `/`, `/servicios/`, `/marangatu/`, `/contacto/` at 1440 and 390 px saved to `docs/screenshots/a1/` and embedded in the PR body; `README.md` has a 3-line "Preview locally" section (`npm ci && npm run dev`, open http://localhost:3000) and a "Deploy to Hostinger" section listing the exact hPanel steps to connect this GitHub repo so every merge to `main` auto-deploys to the staging subdomain (build `npm run build`, start `npm run start`, env vars from `.env.example`); PR merged.
 
 ## After this phase
 Follow `prompts/_handoff.md`. Next: `prompts/opus-2-home.md`, model **Opus**.

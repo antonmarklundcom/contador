@@ -87,7 +87,9 @@ Skills to load: `nodejs-mysql-hostinger-stack` (scaffold conventions only, skip 
 8. Lead API `POST /api/lead`: zod-validated `{name, phone, email?, need, message?, utm*}`, idempotency key, forwards to VenderCRM, degraded mode, rate limit by IP (in-memory), honeypot field. `LeadForm` client component with the "¿Qué necesita?" chip selector from 1B and success state pointing to WhatsApp.
 9. `.env.example`, `KNOWN-ISSUES.md`, `README.md` (run/deploy), GitHub Actions workflow: `npm ci && npm run verify && npm run build` on PR.
 
-Exit: `npm run verify` green; every URL in scan §2 responds per §5.1.6; `/` renders header/footer/fab with tokens; `/api/lead` returns 200 in degraded mode and 200 with a real key when `VENDERCRM_API_KEY` is set; PR merged.
+Exit: `npm run verify` green; every URL in scan §2 responds per §5.1.6; `/` renders header/footer/fab with tokens; `/api/lead` returns 200 in degraded mode and 200 with a real key when `VENDERCRM_API_KEY` is set; Playwright screenshots (1440/390) of 4 routes in `docs/screenshots/a1/` and in the PR body; README has "Preview locally" and "Deploy to Hostinger" (connect GitHub repo in hPanel once; every merge to `main` then auto-deploys to the staging subdomain); PR merged.
+
+Every later phase attaches screenshots the same way (`docs/screenshots/<phase>/`), so each PR is a visual preview.
 
 ### 5.2 A2 — Homepage + shared sections + Servicios hub
 
@@ -174,6 +176,19 @@ Exit: live site on Hostinger staging URL passes the verification script; Lightho
 | GA4 measurement id, Google Ads conversion id/labels | B4 | pending |
 | Social profile URLs (or none) | B2 | pending |
 | Existing legal text in WP admin drafts, if any | B2 | pending |
+
+## 7b. Milestones (what is usable when)
+
+| After merge of | You get |
+|---|---|
+| A1 | Local preview (`npm run dev`) with real header/footer/WhatsApp button and empty pages; Hostinger staging auto-deploy once you connect the repo in hPanel |
+| A2 | Homepage and Servicios hub look like 1B |
+| B1 | All 14 service pages with real copy |
+| B2 | **Publishable minimum**: every legacy URL has real content, legal pages, contact form. Could go live here if needed |
+| B3 | Calculators and tools (SEO growth) |
+| B4 | **Launch-ready**: images, Lighthouse, analytics, live verification, launch checklist |
+
+Hostinger managed Node.js deploys from the GitHub repo (per `nextjs-deploy-hostinger`), so no zip file is needed. If a zip is ever wanted, `npm run build` output plus `package.json` and `public/` is the bundle.
 
 ## 8. Open business questions (parked)
 
