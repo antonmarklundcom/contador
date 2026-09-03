@@ -1,70 +1,1687 @@
-# Keyword Planner export — batch 2, top 50, 2026-09-03
+# Keyword Planner export — batch 2, full data grouped by meaning, 2026-09-03
 
-Second KWP export (Anton), deduplicated across all clusters and cut to the top 50 by
-monthly volume. Keyword + volume only, other columns dropped.
+Second KWP export (Anton). Every keyword with volume ≥10/mo is kept — nothing dropped
+for being "too long-tail." Only two columns: phrase and monthly volume (trend,
+competition, and bid columns removed per request). Grouped by shared meaning/synonyms
+so the list is usable instead of a flat 1,000-row wall; within each group, phrases are
+still listed individually with their own volume — grouping is organizational, not
+deduplication.
 
-| # | Keyword | Vol/mo |
-|---|---|---|
-| 1 | marangatu | 165 000 |
-| 2 | ekuatia | 33 100 |
-| 3 | ekuatia i | 22 200 |
-| 4 | liquidacion de salario | 5 400 |
-| 5 | sifen | 2 900 |
-| 6 | inscripción ruc | 2 400 |
-| 7 | como se calcula el aguinaldo | 2 400 |
-| 8 | irp paraguay | 1 600 |
-| 9 | factura electrónica paraguay (+ variants) | 1 300 |
-| 10 | marangatu 2.0 | 1 300 |
-| 11 | cálculo aguinaldo / aguinaldo calculo | 1 300 |
-| 12 | ekuatia set | 1 300 |
-| 13 | estudio contable | 1 000 |
-| 14 | como calcular aguinaldo / calculo de aguinaldo | 1 000 |
-| 15 | como sacar aguinaldo | 1 000 |
-| 16 | liquidacion de salario ips | 1 000 |
-| 17 | ire simple | 880 |
-| 18 | liquidacion de sueldo jubilado | 720 |
-| 19 | inscribirse al ruc | 590 |
-| 20 | balance general | 480 |
-| 21 | aguinaldo proporcional | 390 |
-| 22 | formulario 120 | 320 |
-| 23 | aguinaldo cuando se cobra | 320 |
-| 24 | cada cuanto se cobra el aguinaldo | 320 |
-| 25 | como se calcular el aguinaldo | 320 |
-| 26 | estados financieros | 260 |
-| 27 | estado de resultados | 260 |
-| 28 | ips liquidacion de salario | 260 |
-| 29 | ire general | 210 |
-| 30 | certificado cumplimiento tributario | 210 |
-| 31 | factura electrónica paraguay set | 210 |
-| 32 | inscripcion de ruc | 170 |
-| 33 | sifen que es | 170 |
-| 34 | acm estudio contable | 170 |
-| 35 | aguinaldo proporcional calculo | 140 |
-| 36 | sacar el aguinaldo proporcional | 140 |
-| 37 | marangatu consulta de ruc | 140 |
-| 38 | abrir eas | 140 |
-| 39 | declaración de iva | 110 |
-| 40 | auditoría interna | 110 |
-| 41 | multas dnit | 110 |
-| 42 | mb estudio contable | 110 |
-| 43 | como calculo aguinaldo proporcional | 110 |
-| 44 | estudio contable martinez | 90 |
-| 45 | mc estudio contable | 90 |
-| 46 | como se saca el aguinaldo | 70 |
-| 47 | como calcular mi aguinaldo | 70 |
-| 48 | formula de aguinaldo proporcional | 70 |
-| 49 | liquidación de salario mensual | 70 |
-| 50 | auditoría impositiva / auditoría forense | 70 |
+Two flags before the lists:
 
-New vs. the first export: `ekuatia i` (22 200/mo — a second navigational giant),
-`marangatu 2.0` and `ekuatia set` (branded-version searches for the same portals),
-`liquidacion de salario ips` / `liquidacion de sueldo jubilado` / `ips liquidacion de
-salario` (the aguinaldo/salary cluster is bigger and more IPS-specific than first
-thought), and `abrir eas` (140/mo, resolves a "not yet checked" item — modest but real).
+- **New high-value term not in the first export:** `ekuatia i` — 22 200/mo, +22% YoY.
+  Nearly as big as `ekuatia` (33 100/mo). The `/ekuatia/` page needs this exact phrase.
+- **KWP's own pagination cut two clusters short.** The RUC/aguinaldo group shows 500 of
+  2 831 rows, and the estados-financieros group shows 500 of 1 231 — both stop right
+  after the last ≥10/mo row visible, but if the real remainder still has rows ≥10/mo,
+  they aren't in this file because they weren't in what was pasted. Re-export with a
+  higher "Visa rader" page size if the tail matters.
 
-Everything below #50 in this export (thousands of long-tail rows, mostly 10-20/mo
-"cómo calcular aguinaldo si trabajé N meses" phrasings, ISO-audit certification
-searches, and competitor brand-name searches) is long-tail noise for ranking purposes —
-not worth a top-N list, but useful if/when someone is writing the FAQ section of a
-specific page and wants real phrasing. Ask if you want that pulled for a specific page
-instead of dumped wholesale.
+---
+
+## Cluster 1 — Estudio contable / IRE simple / IVA
+
+### Estudio contable (core term + city/service variants)
+- estudio contable — 1000
+- estudio contabilidad — 20
+- estudio de contabilidad — 10
+- estudio contable online — 10
+- estudio contable servicios — 10
+- estudio contable precios — 10
+- estudio contable busca — 10
+- estudio contable oficina — 10
+- estudio contable virtual — 10
+- estudio contable san juan — 10
+- estudio contable santa rosa — 10
+- estudio contable e impositivo — 10
+- estudio contable y tributario — 10
+- estudio contable integral — 10
+- estudios fiscales y contables — 10
+- estudio de contadores — 10
+- estudio contadores — 10
+- un estudio contable — 10
+- servicios de un estudio contable — 10
+- paginas de estudios contables — 10
+
+### Estudio contable — competitor brand-name searches ("[iniciales/apellido] estudio contable")
+People searching a specific firm by name/initials — not generic intent, but confirms
+"estudio contable" is how the market frames the search.
+- acm estudio contable — 170
+- mb estudio contable — 110
+- estudio contable martinez — 90
+- mc estudio contable — 90
+- estudio contable dc — 50
+- rb estudio contable — 50
+- estudio contable guerrero — 30
+- estudio contable gm — 20
+- abaco estudio contable — 10
+- af estudio contable — 10
+- as estudio contable — 10
+- auren estudio contable — 10
+- ec estudio contable — 10
+- estudio contable ac — 10
+- estudio contable c&a — 10
+- estudio contable fernandez — 10
+- estudio contable fmo — 10
+- estudio contable fyf — 10
+- estudio contable g&g — 10
+- estudio contable gd — 10
+- estudio contable gp — 10
+- estudio contable greco — 10
+- estudio contable maroni — 10
+- estudio contable mc — 10
+- estudio contable medina — 10
+- estudio contable pineda — 10
+- estudio contable price — 10
+- estudio contable rizzo — 10
+- estudio contable sercofi — 10
+- estudio contable silva — 10
+- estudio contable vega — 10
+- estudio juridico contable — 70
+- gb estudio contable — 10
+- sm estudio contable — 10
+
+### IRE simple / Resimple
+- ire simple — 880
+- ire simple formulario — 40
+- ire simple contribuyentes — 30
+- ire simple liquidación — 10
+- ire simple set — 10
+- set ire simple — 10
+- resimple — 30
+- resimple dinero en tu celular — 10
+- re simple — 10
+
+### Liquidación de IVA (how-to / definitions)
+- liquidación de iva — 50
+- calcular liquidacion iva — 10
+- contabilidad liquidacion iva — 10
+- ejemplo de liquidacion de iva — 10
+- ejemplo liquidacion iva — 10
+- iva liquidacion — 10
+- iva liquidacion trimestral — 10
+- liquidacion de iva como se hace — 10
+- liquidacion de iva contabilidad — 10
+- liquidacion de iva en contabilidad — 10
+- liquidacion de iva libro diario — 10
+- liquidacion del iva como se hace — 10
+- liquidacion iva mensual — 10
+- liquidacion iva modelo 303 — 10
+- liquidacion trimestral de iva — 10
+- liquidación de iva contabilidad — 10
+- liquidación de iva ejemplo — 10
+- liquidación de iva mensual — 10
+- liquidación de iva trimestral — 10
+- liquidación iva contabilidad ejemplos — 10
+- liquidar el iva contabilidad — 10
+- liquidar iva — 10
+- modelo 303 liquidacion iva — 10
+
+### Contabilidad para pymes / small business (generic, not brand-specific)
+- contabilidad para pymes — 10
+- servicios contables para pymes — 10
+- contabilidad pymes — 10
+- servicios de contabilidad para pymes — 10
+- contabilidad para pyme — 10
+- contabilidad estudio — 10
+- contabilidad para pequeñas empresas — 10
+- contabilidad para mypes — 10
+- alegra contabilidad pyme — 10
+- contabilidad en pymes — 10
+- contabilidad financiera para pymes — 10
+- contabilidad para pymes pdf — 10
+- contable pyme — 10
+- nic 1 para pymes — 10
+- niif pymes 2015 — 10
+- niif y nic para pymes — 10
+- sistemas contables para pymes — 0
+
+### Honorarios de contador (pricing/fees intent)
+- contador público paraguay — 10
+- honorarios contador — 10
+- aranceles contadores — 10
+- asesoría contable para empresas — 10
+- contador publico honorarios — 10
+- contadores honorarios — 10
+- honorario minimo contador — 10
+- honorario profesionales contador — 10
+- honorarios contables — 10
+- honorarios contador para monotributista — 10
+- honorarios contador por balance — 10
+- honorarios de contador — 10
+- honorarios minimos contador — 10
+- honorarios para contadores — 10
+- honorarios perito contable — 10
+- honorarios profesionales contador publico — 10
+- los honorarios del contador son deducibles — 10
+
+## Cluster 2 — Marangatu / Ekuatia / SIFEN / RUC / factura electrónica
+
+### Marangatu (DNIT portal, navigational)
+- marangatu — 165000
+- marangatu 2.0 — 1300
+- marangatu consulta de ruc — 140
+- marangatu cumplimiento tributario — 20
+- marangatu eset — 70
+- marangatu contabilidad — 10
+- marangatu informconf — 10
+
+### Ekuatia (SIFEN e-invoicing portal, navigational)
+- ekuatia — 33100
+- ekuatia i — 22200
+- ekuatia set — 1300
+- sifen https ekuatia set gov py portal ekuatia — 10
+
+### SIFEN (informational)
+- sifen — 2900
+- sifen que es — 170
+- sifen set — 50
+
+### Factura electrónica / facturación electrónica Paraguay (commercial)
+- factura electrónica paraguay — 1300
+- factura electronica paraguay — 1300
+- facturación electrónica paraguay — 1300
+- factura electrónica paraguay set — 210
+- facturación electrónica paraguay set — 210
+- factura virtual set paraguay — 70
+- factura digital paraguay — 50
+- facturación electrónica paraguay listado — 30
+- factura electrónica en paraguay — 20
+- factura virtual paraguay — 20
+- facturación electrónica paraguay 2023 — 10
+- factura electronica py — 10
+- factura electronica set paraguay — 10
+- facturacion electronica paraguay 2023 — 10
+- facturación electrónica paraguay 2021 — 10
+- facturación electrónica paraguay 2022 — 10
+- implementación de la factura electrónica en paraguay — 10
+- paraguay factura electronica — 10
+
+### Inscripción / obtención de RUC (registration intent)
+- inscripción ruc — 2400
+- inscribirse al ruc — 590
+- inscripcion de ruc — 170
+- ruc inscripcion — 50
+- requisitos para inscripcion en el ruc — 40
+- inscripción del ruc — 30
+- como crear ruc — 20
+- como crear un ruc — 20
+- sacar ruc — 10
+- actualizar ruc — 10
+- inscribir ruc — 10
+- inscripcion para ruc — 10
+- inscripcion ruc sunat — 10
+- inscripción al rol único tributario — 10
+- inscripción al ruc para persona natural — 10
+- inscripción de ruc persona natural — 10
+- obtención de ruc — 10
+- obtener mi ruc — 10
+- obtener ruc en linea — 10
+- obtener ruc por primera vez — 10
+- generar mi ruc — 10
+- creacion de ruc en linea — 10
+- creacion de ruc persona natural — 10
+- crear numero de ruc — 10
+- crear ruc 20 — 10
+- crear ruc en linea — 10
+- tramite de ruc — 10
+- tramites para sacar ruc — 10
+
+### "Cómo sacar/obtener mi RUC" — the long "how do I get a RUC" tail
+One intent (walk me through getting a RUC), asked ~150 different ways. Good candidate
+for a single comprehensive guide article rather than separate pages.
+- como sacar ruc para negocio — 10
+- como sacar mi ruc — 10
+- como sacar ruc por internet — 10
+- como adquirir mi ruc — 10
+- como crear el ruc — 10
+- como crear mi numero de ruc — 10
+- como generar mi ruc — 10
+- como hago para sacar mi ruc — 10
+- como obtener un ruc en linea — 10
+- como puedo sacar el ruc en linea — 10
+- como puedo sacar mi ruc — 10
+- como puedo sacar ruc — 10
+- como puedo sacar ruc virtual — 10
+- como puedo sacar un ruc — 10
+- como sacar el ruc de una empresa — 10
+- como sacar el ruc de una persona — 10
+- como sacar el ruc en linea — 10
+- como sacar el ruc para extranjeros — 10
+- como sacar mi numero de ruc — 10
+- como sacar mi ruc de manera virtual — 10
+- como sacar mi ruc en linea — 10
+- como sacar mi ruc online — 10
+- como sacar mi ruc para recibo por honorarios — 10
+- como sacar mi ruc por internet — 10
+- como sacar mi ruc por primera vez — 10
+- como sacar mi ruc virtual — 10
+- como sacar ruc de empresa — 10
+- como sacar ruc de una empresa — 10
+- como sacar ruc en linea — 10
+- como sacar ruc extranjeros — 10
+- como sacar ruc para emitir factura — 10
+- como sacar ruc para empresa — 10
+- como sacar ruc para extranjeros — 10
+- como sacar ruc para mi negocio — 10
+- como sacar ruc para servicios generales — 10
+- como sacar ruc persona natural — 10
+- como sacar ruc persona natural por internet — 10
+- como sacar ruc personal — 10
+- como sacar ruc por internet persona natural sin negocio — 10
+- como sacar ruc por primera vez — 10
+- como sacar tu ruc — 10
+- como sacar tu ruc para emitir recibo por honorarios — 10
+- como sacar tu ruc por internet — 10
+- como sacar tu ruc virtual — 10
+- como sacar un ruc — 10
+- como sacar un ruc en linea — 10
+- como sacar un ruc persona natural — 10
+- como sacar un ruc personal — 10
+- como saco mi ruc personal — 10
+- como se saca el ruc — 10
+- como se saca ruc — 10
+- como se saca un ruc — 10
+- como solicitar ruc — 10
+- como tramitar el ruc — 10
+- como tramitar el ruc por internet — 10
+- cuanto cuesta sacar ruc — 10
+- cuanto cuesta sacar un ruc — 10
+- donde puedo sacar mi ruc — 10
+- donde puedo sacar mi ruc como persona natural — 10
+- donde puedo sacar ruc — 10
+- donde sacar el ruc — 10
+- donde sacar mi ruc — 10
+- donde sacar mi ruc por primera vez — 10
+- donde sacar ruc — 10
+- donde sacar ruc presencial — 10
+- donde se saca el ruc — 10
+- donde se saca ruc — 10
+- para sacar mi ruc — 10
+- para sacar ruc — 10
+- para sacar ruc por primera vez — 10
+- pasos para sacar mi ruc — 10
+- pasos para sacar ruc — 10
+- pasos para sacar un ruc — 10
+- quiero crear mi ruc — 10
+- quiero sacar mi ruc — 10
+- quiero sacar mi ruc en linea — 10
+- quiero sacar mi ruc para emitir recibo por honorarios — 10
+- quiero sacar mi ruc virtual — 10
+- quiero sacar ruc — 10
+- ruc como sacar — 10
+- ruc como sacar en linea — 10
+- ruc en linea sacar — 10
+- ruc sacar — 10
+- ruc sacar en linea — 10
+- sacar el ruc — 10
+- sacar el ruc en linea — 10
+- sacar mi ruc — 10
+- sacar mi ruc por primera vez — 10
+- sacar mi ruc virtual — 10
+- sacar ruc de empresa — 10
+- sacar ruc empresa — 10
+- sacar ruc en linea — 10
+- sacar ruc online — 10
+- sacar ruc para empresa — 10
+- sacar ruc para negocio — 10
+- sacar ruc persona natural — 10
+- sacar ruc por internet — 10
+- sacar ruc por primera vez — 10
+- sacar un ruc — 10
+- sacar un ruc en linea — 10
+
+### RUC requirements ("qué necesito / requisitos")
+- para sacar ruc que se necesita — 10
+- para sacar ruc requisitos — 10
+- que necesito para sacar mi ruc — 10
+- que necesito para sacar ruc — 10
+- que necesito para sacar un ruc — 10
+- que requisitos para sacar ruc — 10
+- que requisitos piden para sacar ruc — 10
+- que requisitos se necesita para sacar el ruc — 10
+- que requisitos se necesita para sacar ruc — 10
+- que se necesita para sacar ruc — 10
+- que se necesita para sacar ruc como persona natural — 10
+- que se necesita para sacar ruc de empresa — 10
+- que se necesita para sacar un ruc — 10
+- requisito para sacar ruc — 10
+- requisitos para obtener un ruc — 10
+- requisitos para sacar el ruc de una empresa — 10
+- requisitos para sacar mi ruc — 10
+- requisitos para sacar ruc como persona natural — 10
+- requisitos para sacar ruc de empresa — 10
+- requisitos para sacar ruc de una empresa — 10
+- requisitos para sacar ruc para extranjeros — 10
+- requisitos para sacar ruc persona natural — 10
+- requisitos para sacar ruc persona natural con negocio — 10
+- requisitos para sacar ruc personal — 10
+- requisitos para sacar ruc por primera vez — 10
+- requisitos para sacar tu ruc — 10
+- requisitos para sacar un ruc — 10
+- requisitos para tramitar el ruc — 10
+
+### Abrir EAS (company formation — resolves a "not yet checked" item)
+- abrir eas — 140
+
+## Cluster 3 — Aguinaldo / liquidación de salario
+
+### Liquidación de salario (core, general)
+- liquidacion de salario — 5400
+- liquidacion de salario ips — 1000
+- liquidacion de sueldo jubilado — 720
+- ips liquidacion de salario — 260
+- liquidacion salarios — 70
+- liquidación de salario mensual — 70
+- nómina paraguay — 30
+- mi liquidación de sueldo — 30
+- mi liquidaciones de sueldo — 30
+- sueldos jornales — 30
+- liquidaciones de sueldo ips — 20
+- liquidacion de salario de ips — 20
+- planilla ips — 10
+- liquidación de sueldos — 10
+- liquidacion de remuneraciones — 10
+- liquidaciones de sueldo excel — 10
+- ultimas liquidaciones de sueldo — 10
+- liquidacion de sueldos y jornales — 10
+- servicio de liquidacion de sueldos — 10
+- ver liquidaciones de sueldo — 10
+- liquidacion sueldo — 10
+- liquidación de sueldos ejemplos — 10
+- buscar liquidaciones de sueldo — 10
+
+### Liquidación por despido / renuncia (termination)
+- líquidacion por despido — 70
+- ministerio de trabajo liquidación por renuncia — 70
+- liquidacion de sueldo por renuncia — 10
+- liquidacion de sueldo por despido — 10
+- cuanto te pagan por despido improcedente — 10
+- aguinaldo por despido — 10
+- aguinaldo proporcional por despido — 10
+- calcular aguinaldo por renuncia — 10
+- calcular aguinaldo proporcional por renuncia — 10
+- calculo de aguinaldo por renuncia voluntaria — 10
+- como calcular el aguinaldo si renuncio — 10
+- aguinaldo en liquidación de sueldo — 10
+
+### Cómo se calcula el aguinaldo (core "how to calculate")
+- como se calcula el aguinaldo — 2400
+- cálculo aguinaldo — 1300
+- aguinaldo calculo — 1300
+- como calcular aguinaldo — 1000
+- calculo de aguinaldo — 1000
+- calcula de aguinaldo — 1000
+- como se calcular el aguinaldo — 320
+- el aguinaldo como se calcula — 50
+- como sacar el aguinaldo — 40
+- como se saca el aguinaldo — 70
+- como calcular mi aguinaldo — 70
+- cómo calcular mi aguinaldo — 70
+- como se paga el aguinaldo — 50
+- como se cobra el aguinaldo — 50
+- calcula mi aguinaldo — 20
+- calcular mi aguinaldo — 20
+- calculo para aguinaldo — 20
+- como calcular tu aguinaldo — 20
+- como se calcula tu aguinaldo — 20
+- cómo es el aguinaldo — 20
+- mi aguinaldo — 20
+- sacar mi aguinaldo — 20
+- com calcular el aguinaldo — 10
+- com se calcula el aguinaldo — 10
+- como averiguar el aguinaldo — 10
+- como calcular en aguinaldo — 10
+- como calcular los aguinaldos — 10
+- como consultar el aguinaldo — 10
+- como contar el aguinaldo — 10
+- como corresponde el aguinaldo — 10
+- como cotizar aguinaldo — 10
+- como cotizar el aguinaldo — 10
+- como dar aguinaldo — 10
+- como de calcula el aguinaldo — 10
+- como de paga el aguinaldo — 10
+- como de saca el aguinaldo — 10
+- como debe ser el aguinaldo — 10
+- como debe ser el pago de aguinaldo — 10
+- como debe ser pagado el aguinaldo — 10
+- como deducir aguinaldo — 10
+- como es el aguinaldo proporcional — 10
+- como es el calculo de aguinaldo — 10
+- como es el calculo del aguinaldo — 10
+- como es el porcentaje del aguinaldo — 10
+- como es el proporcional del aguinaldo — 10
+- como funciona el aguinaldo — 10
+- como hacer calculo de aguinaldo — 10
+- como hacer el calculo de aguinaldo — 10
+- como hacer el calculo del aguinaldo — 10
+- como hacer la cuenta del aguinaldo — 10
+- como liquidar el aguinaldo — 10
+- como medir el aguinaldo — 10
+- como obtener el aguinaldo — 10
+- como promediar el aguinaldo — 10
+- como puedo calcular el aguinaldo — 10
+- como puedo calcular mi aguinaldo — 10
+- como puedo saber mi aguinaldo — 10
+- como puedo sacar mi aguinaldo — 10
+- como saber aguinaldo — 10
+- cobra aguinaldo — 10
+- aguinaldo ejemplo — 10
+- aguinaldo excel — 10
+- aguinaldo formula — 10
+- aguinaldo formula calculo — 10
+- aguinaldo finiquito — 10
+- aguinaldo mensual — 10
+- aguinaldo meses — 10
+- formula de aguinaldo proporcional — 70
+
+### Cuánto/cuándo se cobra el aguinaldo (amount + timing questions)
+- aguinaldo cuando se cobra — 320
+- aguinaldo cuándo se cobra — 320
+- cada cuanto se cobra el aguinaldo — 320
+- cuanto es el aguinaldo — 50
+- desde cuando se cobra aguinaldo — 20
+- despues de cuantos meses se cobra el aguinaldo — 20
+- cuanto se cobra el aguinaldo — 20
+- cuanto se paga el aguinaldo — 20
+- cuanto me corresponde mi aguinaldo — 20
+- cuanto me toca de aguinaldo — 10
+- como saber cuanto me toca de aguinaldo — 10
+- cuanto corresponde de aguinaldo — 10
+- cuanto se da de aguinaldo — 10
+- a cuanto corresponde el aguinaldo — 10
+- a cuanto equivale el aguinaldo — 10
+- a cuanto equivale un aguinaldo — 10
+- a cuantos dias equivale el aguinaldo — 10
+- al cuanto tiempo te corresponde aguinaldo — 10
+- a que corresponde el aguinaldo — 10
+- a que equivale el aguinaldo — 10
+- aguinaldo cuando corresponde — 10
+- aguinaldo cuando se cobra 2022 — 10
+- aguinaldo cuando te corresponde — 10
+- aguinaldo cuanto — 10
+- aguinaldo cuanto corresponde — 10
+- aguinaldo cuanto es — 10
+- aguinaldo cuanto es por ley — 10
+- aguinaldo cuanto me corresponde — 10
+- aguinaldo cuanto me toca — 10
+- aguinaldo cuanto se cobra — 10
+- aguinaldo cuanto se da — 10
+- aguinaldo cuanto se paga — 10
+- aguinaldo cuantos dias se pagan — 10
+- aguinaldo cuantos dias tienes que trabajar — 10
+- aguinaldo cuenta — 10
+- aguinaldo cuánto se paga — 10
+- aguinaldo dias trabajados — 10
+- aguinaldo en que mes se cobra — 10
+- aguinaldo hasta cuando se paga — 10
+- aguinaldo que mes se cobra — 10
+- aguinaldo desde cuando corresponde — 10
+- aguinaldo desde cuando se cobra — 10
+- aguinaldo despues de cuantos meses — 10
+- aguinaldo diciembre cuando se paga — 10
+- aguinaldo de diciembre cuando se cobra — 10
+- aguinaldo de diciembre cuando se paga — 10
+- aguinaldo de diciembre como se calcula — 10
+- cada cuanto se paga el aguinaldo — 10
+- cobro aguinaldo si trabaje 2 meses — 10
+
+### Aguinaldo proporcional (partial-year eligibility, general)
+- aguinaldo proporcional — 390
+- aguinaldo proporcional calculo — 140
+- sacar aguinaldo proporcional — 140
+- sacar el aguinaldo proporcional — 140
+- como calculo aguinaldo proporcional — 110
+- aguinaldo proporcional como calcular — 30
+- que es aguinaldo proporcional — 30
+- cuanto es el aguinaldo proporcional — 20
+- que significa aguinaldo proporcional — 20
+- liquidacion de aguinaldo — 20
+- aguinaldo calcular proporcional — 10
+- aguinaldo calculo proporcional — 10
+- aguinaldo proporcional a 3 meses — 10
+- aguinaldo proporcional a 6 meses — 10
+- aguinaldo proporcional a los dias trabajados — 10
+- aguinaldo proporcional a los meses trabajados — 10
+- aguinaldo proporcional calculadora — 10
+- aguinaldo proporcional formula — 10
+- aguinaldo proporcional por 3 meses trabajados — 10
+- aguinaldo proporcional por un mes de trabajo — 10
+- aguinaldo proporcional que es — 10
+- aguinaldo es proporcional — 10
+- aguinaldo se paga proporcional — 10
+- como calcular el proporcional de aguinaldo — 10
+- como calcular el proporcional del aguinaldo — 10
+- como calcular un aguinaldo proporcional — 10
+- como determinar aguinaldo proporcional — 10
+- calcular el proporcional de aguinaldo — 10
+- calcular mi aguinaldo proporcional — 10
+- calculador de aguinaldo proporcional — 10
+- calculadora de aguinaldo proporcional — 10
+- calculadora proporcional aguinaldo — 10
+- calculo del aguinaldo proporcional — 10
+- calculo para aguinaldo proporcional — 10
+- calculo proporcional del aguinaldo — 10
+- como calcular mi aguinaldo proporcional — 10
+- como calcular tu aguinaldo proporcional — 10
+
+### Aguinaldo by months worked ("aguinaldo de/con/por N meses")
+Same intent — "I worked N months, how much aguinaldo do I get" — asked with every
+number from 1 to 11 and every preposition. One calculator input (months worked) covers
+this entire group.
+- aguinaldo por 6 meses trabajados — 20
+- 2 meses de trabajo aguinaldo — 10
+- 3 meses de trabajo aguinaldo — 10
+- 4 meses de trabajo cuanto es de aguinaldo — 10
+- 6 meses de trabajo aguinaldo — 10
+- a cuantos meses de trabajo corresponde aguinaldo — 10
+- a los cuantos dias trabajados corresponde aguinaldo — 10
+- a los cuantos meses corresponde aguinaldo — 10
+- a los cuantos meses corresponde el aguinaldo — 10
+- a los cuantos meses de trabajar te dan aguinaldo — 10
+- a los cuantos meses de trabajo corresponde aguinaldo — 10
+- a los cuantos meses de trabajo se cobra el aguinaldo — 10
+- a los cuantos meses de trabajo te corresponde aguinaldo — 10
+- a los cuantos meses de trabajo te toca aguinaldo — 10
+- a los cuantos meses me corresponde aguinaldo — 10
+- a los cuantos meses me toca aguinaldo — 10
+- a los cuantos meses se cobra aguinaldo — 10
+- a los cuantos meses se cobra el aguinaldo — 10
+- a los cuantos meses se da aguinaldo — 10
+- a los cuantos meses se da el aguinaldo — 10
+- a los cuantos meses se paga aguinaldo — 10
+- a los cuantos meses se paga el aguinaldo — 10
+- a los cuantos meses te corresponde aguinaldo — 10
+- a los cuantos meses te dan aguinaldo — 10
+- a los cuantos meses te pagan el aguinaldo — 10
+- a los cuantos meses toca aguinaldo — 10
+- a que tiempo de trabajo corresponde aguinaldo — 10
+- aguinaldo 1 mes de trabajo — 10
+- aguinaldo 2 meses trabajo — 10
+- aguinaldo 3 meses — 10
+- aguinaldo 3 meses de trabajo — 10
+- aguinaldo 4 meses trabajando — 10
+- aguinaldo 5 meses trabajados — 10
+- aguinaldo 6 meses — 10
+- aguinaldo 6 meses de antiguedad — 10
+- aguinaldo 7 meses — 10
+- aguinaldo 8 meses — 10
+- aguinaldo completo despues de 6 meses — 10
+- aguinaldo con 2 meses de trabajo — 10
+- aguinaldo con 3 meses de trabajo — 10
+- aguinaldo con 4 meses de trabajo — 10
+- aguinaldo con 6 meses de trabajo — 10
+- aguinaldo correspondiente a 2 meses de trabajo — 10
+- aguinaldo correspondiente a 3 meses de trabajo — 10
+- aguinaldo correspondiente a 4 meses de trabajo — 10
+- aguinaldo correspondiente a 6 meses de trabajo — 10
+- aguinaldo de 10 meses — 10
+- aguinaldo de 2 meses — 10
+- aguinaldo de 3 meses — 10
+- aguinaldo de 4 meses — 10
+- aguinaldo de 5 meses — 10
+- aguinaldo de 6 meses — 10
+- aguinaldo de 7 meses — 10
+- aguinaldo de 8 meses — 10
+- aguinaldo de 9 meses — 10
+- aguinaldo de un mes de trabajo — 10
+- aguinaldo por 1 mes — 10
+- aguinaldo por 10 meses de trabajo — 10
+- aguinaldo por 11 meses de trabajo — 10
+- aguinaldo por 15 dias de trabajo — 10
+- aguinaldo por 2 meses — 10
+- aguinaldo por 2 meses de trabajo — 10
+- aguinaldo por 3 meses — 10
+- aguinaldo por 3 meses de trabajo — 10
+- aguinaldo por 3 meses trabajados — 10
+- aguinaldo por 4 meses — 10
+- aguinaldo por 4 meses de trabajo — 10
+- aguinaldo por 5 meses — 10
+- aguinaldo por 5 meses de trabajo — 10
+- aguinaldo por 6 meses — 10
+- aguinaldo por 7 meses — 10
+- aguinaldo por 7 meses de trabajo — 10
+- aguinaldo por 8 meses — 10
+- aguinaldo por 8 meses de trabajo — 10
+- aguinaldo por 9 meses de trabajo — 10
+- aguinaldo por dias trabajados — 10
+- aguinaldo por dos meses — 10
+- aguinaldo por dos meses de trabajo — 10
+- aguinaldo por meses trabajados — 10
+- aguinaldo por seis meses de trabajo — 10
+- aguinaldo por tres meses de trabajo — 10
+- aguinaldo por un mes de trabajo — 10
+- aguinaldo si tengo 3 meses — 10
+- aguinaldo si trabaje 1 mes — 10
+- aguinaldo si trabaje 3 meses — 10
+- aguinaldo si trabaje 6 meses — 10
+- aguinaldo tres meses de trabajo — 10
+- aguinaldo un mes de trabajo — 10
+- antiguedad para cobrar aguinaldo — 10
+- aguinaldo segun antiguedad — 10
+- calcular aguinaldo 3 meses — 10
+- calcular aguinaldo de 3 meses — 10
+- calcular aguinaldo de 4 meses — 10
+- calcular aguinaldo de 5 meses — 10
+- calcular aguinaldo de 8 meses — 10
+- calcular aguinaldo por 3 meses — 10
+- calcular aguinaldo por dias trabajados — 10
+- calcular dias de aguinaldo — 10
+- calculo aguinaldo mensual — 10
+- calculo aguinaldo semanal — 10
+- calculo de aguinaldo por 3 meses — 10
+- calculo de aguinaldo por 5 meses — 10
+- calculo de aguinaldo por 6 meses — 10
+- calculo de aguinaldo por antiguedad — 10
+- calculo de aguinaldo por dias trabajados — 10
+- calculo de aguinaldo por meses trabajados — 10
+- calculo de dias de aguinaldo — 10
+- calculo dias de aguinaldo — 10
+- como calcular aguinaldo de 10 meses — 10
+- como calcular aguinaldo de 3 meses — 10
+- como calcular aguinaldo de 4 meses — 10
+- como calcular aguinaldo de 6 meses — 10
+- como calcular aguinaldo de 9 meses — 10
+- como calcular aguinaldo por dias trabajados — 10
+- como calcular aguinaldo si trabajo 3 meses — 10
+- como calcular aguinaldo si trabajo por horas — 10
+- como calcular cuanto aguinaldo me corresponde — 10
+- como calcular cuanto me corresponde de aguinaldo — 10
+- como calcular cuanto me toca de aguinaldo — 10
+- como calcular cuanto te toca de aguinaldo — 10
+- como calcular el aguinaldo de 10 meses — 10
+- como calcular el aguinaldo de 15 dias — 10
+- como calcular el aguinaldo de 2 meses — 10
+- como calcular el aguinaldo de 3 meses — 10
+- como calcular el aguinaldo de 4 meses — 10
+- como calcular el aguinaldo de 5 meses — 10
+- como calcular el aguinaldo de 6 meses — 10
+- como calcular el aguinaldo de 7 meses — 10
+- como calcular el aguinaldo de 8 meses — 10
+- como calcular el aguinaldo de 9 meses — 10
+- como calcular el aguinaldo de dos meses — 10
+- como calcular el aguinaldo de un mes de trabajo — 10
+- como calcular el aguinaldo por dias trabajados — 10
+- como calcular el aguinaldo por meses — 10
+- como calcular el aguinaldo semanal — 10
+- como calcular el aguinaldo si trabaje 4 meses — 10
+- como calcular el aguinaldo si trabaje 5 meses — 10
+- como calcular el aguinaldo si trabaje 6 meses — 10
+- como calcular el aguinaldo si trabaje 9 meses — 10
+- como calcular el aguinaldo si trabajo por horas — 10
+- como calcular lo que me corresponde de aguinaldo — 10
+- como calcular lo que me toca de aguinaldo — 10
+- como calcular mi aguinaldo si trabaje 8 meses — 10
+- como calculo el medio aguinaldo — 10
+- como calcular el medio aguinaldo — 10
+- como calcular medio aguinaldo — 10
+- como puedo saber cuanto me corresponde de aguinaldo — 10
+- como puedo saber cuanto me toca de aguinaldo — 10
+
+### Aguinaldo by worker type (doméstica / jornalero / docente / commissions / variable pay)
+- calculo aguinaldo jornalero — 10
+- calculo aguinaldo ley federal del trabajo — 10
+- calculo de aguinaldo jornalero — 10
+- calculo de aguinaldo para jornaleros — 10
+- calculo de aguinaldo salario minimo — 10
+- calculo de aguinaldo sobre sueldo bruto o neto — 10
+- calculo de aguinaldo sueldo variable — 10
+- calculo de aguinaldo con comisiones — 10
+- calculo de aguinaldo con sueldo variable — 10
+- calculo de aguinaldo licencia por maternidad — 10
+- calcular aguinaldo con comisiones — 10
+- calcular aguinaldo docente — 10
+- calcular aguinaldo personal domestico — 10
+- calculadora aguinaldo empleada domestica — 10
+- como calcular aguinaldo con aumento de sueldo — 10
+- como calcular aguinaldo con comisiones — 10
+- como calcular aguinaldo de empleada domestica — 10
+- como calcular aguinaldo de un jornalero — 10
+- como calcular aguinaldo docente — 10
+- como calcular aguinaldo empleada domestica — 10
+- como calcular aguinaldo jornalero — 10
+- como calcular aguinaldo para empleada domestica — 10
+- como calcular aguinaldo personal domestico — 10
+- como calcular aguinaldo y salario vacacional — 10
+- como calcular el aguinaldo de empleada domestica — 10
+- como calcular el aguinaldo de la empleada domestica — 10
+- como calcular el aguinaldo de un empleado — 10
+- como calcular el aguinaldo de un jornalero — 10
+- como calcular el aguinaldo de un trabajador — 10
+- como calcular el aguinaldo docente — 10
+- como calcular el aguinaldo empleada domestica — 10
+- como calcular el aguinaldo para empleada domestica — 10
+- como calcular el aguinaldo segun la ley federal del trabajo — 10
+- como determinar el aguinaldo de un trabajador — 10
+- como liquidar aguinaldo empleada domestica — 10
+- aguinaldo docente como se calcula — 10
+- aguinaldo domesticas — 10
+- aguinaldo empleada domestica — 10
+- aguinaldo comisiones — 10
+- aguinaldo con sueldo variable — 10
+- aguinaldo incluye comisiones — 10
+- aguinaldo incluye horas extras — 10
+- aguinaldo variable — 10
+- aguinaldo sobre comisiones — 10
+- aguinaldo sueldo minimo — 10
+- aguinaldo y licencia por maternidad — 10
+- calcular el aguinaldo de un trabajador — 10
+- calcular sueldo aguinaldo — 10
+- calcular sueldo con aguinaldo — 10
+
+### Aguinaldo — definitional / gross-vs-net / legal basis
+- el aguinaldo se calcula del sueldo bruto o neto — 20
+- aguinaldo es la mitad del sueldo — 10
+- aguinaldo es sobre sueldo bruto o neto — 10
+- aguinaldo es un sueldo completo — 10
+- aguinaldo se calcula con salario bruto o neto — 10
+- aguinaldo se calcula sobre sueldo bruto o neto — 10
+- aguinaldo se descuenta del sueldo — 10
+- aguinaldo que se descuenta — 10
+- aguinaldo sobre bruto o neto — 10
+- aguinaldo sobre que se calcula — 10
+- aguinaldo sobre indemnizacion por antiguedad — 10
+- aguinaldo sobre vacaciones no gozadas calculo — 10
+- aguinaldo sueldo — 10
+- aguinaldo porcentaje — 10
+- aguinaldo porcentaje del sueldo — 10
+- aguinaldo por ley — 10
+- aguinaldo que corresponde por ley — 10
+- aguinaldo que es y como se calcula — 10
+- aguinaldo que es y como se paga — 10
+- aguinaldo se paga — 10
+- aguinaldo corresponde — 10
+- aguinaldo y antiguedad — 10
+- aguinaldo y vacaciones proporcionales — 10
+- calculo de aguinaldo y liquidacion — 10
+- calculo de aguinaldo y vacaciones — 10
+- calculo de aguinaldo y vacaciones proporcionales — 10
+- calculo de vacaciones y aguinaldo — 10
+- calcular aguinaldo y vacaciones — 10
+- calcular vacaciones y aguinaldo — 10
+- calcular aguinaldo calculadora — 10
+- calcular aguinaldo formula — 10
+- calcular porcentaje aguinaldo — 10
+- calcular porcentaje de aguinaldo — 10
+- calculo aguinaldo calculadora — 10
+- calculo aguinaldo ejemplo — 10
+- calculo aguinaldo neto — 10
+- calculo de aguinaldo 2023 — 10
+- calculo de aguinaldo calculadora — 10
+- calculo de aguinaldo ejemplo — 10
+- calculo de aguinaldo en excel — 10
+- calculo de aguinaldo formula — 10
+- calculo de aguinaldo online — 10
+- calculo de aguinaldo simulador — 10
+- calculo de mi aguinaldo — 10
+- calculo de pago de aguinaldo — 10
+- calculo de proporcional de aguinaldo — 10
+- calculo para pago de aguinaldo — 10
+- calculo sac — 10
+- como calcular aguinaldo de diciembre — 10
+- como calcular aguinaldo de junio — 10
+- como calcular aguinaldo diciembre — 10
+- como calcular aguinaldo en excel — 10
+- como calcular aguinaldo junio — 10
+- como calcular aguinaldo y vacaciones — 10
+- como calcular aguinaldo y vacaciones proporcionales — 10
+- como calcular el aguinaldo calculadora — 10
+- como calcular el aguinaldo con horas extras — 10
+- como calcular el aguinaldo de diciembre — 10
+- como calcular el aguinaldo de junio — 10
+- como calcular el aguinaldo ejemplos — 10
+- como calcular el aguinaldo en excel — 10
+- como calcular el aguinaldo formula — 10
+- como calcular el aguinaldo por 5 meses — 10
+- como calcular el aguinaldo por 6 meses — 10
+- como calcular el aguinaldo y vacaciones — 10
+- como calcular el pago de aguinaldo — 10
+- como calcular el pago del aguinaldo — 10
+- como calcular el porcentaje de aguinaldo — 10
+- como calcular el porcentaje del aguinaldo — 10
+- como calcular el sac proporcional — 10
+- como calcular el sueldo anual complementario — 10
+- como calcular pago de aguinaldo — 10
+- como calcular porcentaje de aguinaldo — 10
+- como calcular sac proporcional — 10
+- como calculo el sac — 10
+- como calculo el sac proporcional — 10
+- calcular aguinaldo en linea — 10
+- calcular aguinaldo neto — 10
+- calcular aguinaldo online — 10
+- calcular aguinaldo parcial — 10
+- calcular aguinaldo proporcional online — 10
+- calcular pago aguinaldo — 10
+- calcular pago de aguinaldo — 10
+- calcula tu aguinaldo — 10
+- calculadora aguinaldo neto — 10
+- calculadora aguinaldo online — 10
+- calculadora aguinaldos — 10
+- calculadora de aguinaldo online — 10
+- calculadora de aguinaldo y vacaciones — 10
+- calculadora online aguinaldo — 10
+- calculadora online de aguinaldo — 10
+- calculadora para aguinaldo — 10
+- calculadora para calcular aguinaldo — 10
+- calculadora para calcular el aguinaldo — 10
+- calculadora para el aguinaldo — 10
+- calculadora para sacar aguinaldo — 10
+- calculadora para sacar el aguinaldo — 10
+- aplicacion para calcular aguinaldo — 10
+- aplicacion para calcular el aguinaldo — 10
+- aguinaldo simulador — 10
+
+## Cluster 4 — Auditoría / peritaje / planificación fiscal
+
+### Auditoría (service intent — this is what the /auditoria/ page targets)
+- certificado cumplimiento tributario — 210
+- auditoría interna — 110
+- multas dnit — 110
+- auditoría impositiva — 70
+- auditoría forense — 70
+- peritaje contable — 30
+- auditor interno — 30
+- instituto de auditores internos — 20
+- auditoria externa impositiva — 20
+- auditoría externa paraguay — 10
+- asesoría tributaria — 10
+- planificación fiscal — 10
+- asesoria contable y tributaria — 10
+- asesor tributario — 10
+- asesor de hacienda — 10
+- planificación fiscal internacional — 10
+- asesoramiento tributario — 10
+- perito contable judicial — 10
+- auditoria forense contable — 10
+- planificacion tributaria — 10
+- auditoria interna y externa — 10
+- servicios de auditoria interna — 10
+- contador forense — 10
+- auditoria interna de una empresa — 10
+- planeacion fiscal — 10
+- consultoria contable y tributaria — 10
+- asesoramiento contable y tributario — 10
+- asesoria contable tributaria y laboral — 10
+- asesoria fiscal y tributaria — 10
+- asesoria interna — 10
+- control interno auditoria — 10
+- auditool control interno — 10
+- planeacion tributaria — 10
+- planeamiento fiscal — 10
+- planificacion de impuestos — 10
+- planificacion fiscal que es — 10
+- servicios de contabilidad auditoría y asesoría fiscal — 10
+- pericia contable ejemplo — 10
+- pericia contable laboral — 10
+- pericia contable pdf — 10
+- pericial contable — 10
+- pericial contable ejemplo — 10
+- peritaje contable ejemplo — 10
+- peritaje contable laboral — 10
+- peritaje contable que es — 10
+- peritaje en contabilidad — 10
+- peritaje financiero — 10
+- perito contable poder judicial — 10
+- dictamen pericial contable — 10
+- dictamen pericial contable ejemplo — 10
+- ejemplo peritaje contable — 10
+- auditoria forense pdf — 10
+- auditoria forense que es — 10
+- auditoria forense significado — 10
+- auditoria forense concepto — 10
+- auditoria forense de sistemas informaticos — 10
+- auditoria forense gubernamental — 10
+- auditoria forense informatica — 10
+- auditoria forense preventiva — 10
+- auditoria forense universidades — 10
+- auditoría forense contable — 10
+- auditoría forense ejemplo — 10
+- auditoría forense gubernamental — 10
+- auditoría forense significado — 10
+- ejemplo de auditoria forense — 10
+- en que consiste la auditoria forense — 10
+- para que sirve la auditoria forense — 10
+- caso de auditoria forense — 10
+- concepto de auditoria forense — 10
+- la auditoria forense — 10
+- programas de auditoria forense — 10
+- tipos de auditoria forense — 10
+- significado de auditoria forense — 10
+- forense auditoria — 10
+- contabilidad forense ejemplo — 10
+- contabilidad forense pdf — 10
+- contabilidad forense que es — 10
+- la contabilidad forense — 10
+- auditoria de forense — 10
+- auditoría externa impositiva 2022 — 10
+- auditoria especializada — 10
+- auditoria externa en salud — 10
+- auditoria externa y auditoria interna — 10
+- objetivo de una auditoria externa — 10
+- la auditoría externa — 10
+- de que se encarga la auditoria interna — 10
+- de quien depende el auditor interno — 10
+- define auditoria interna — 10
+- departamentos de auditoria — 10
+- día del auditor interno — 10
+- el auditor interno — 10
+- en que consiste la auditoria interna — 10
+- en que consiste una auditoria interna — 10
+- gestion de auditoria interna — 10
+- para que se hace una auditoria interna — 10
+- para que sirve la auditoria interna — 10
+- para que sirve la auditoria interna en una empresa — 10
+- para que sirve una auditoria interna — 10
+- para que sirven las auditorias internas — 10
+- reglamento de auditoria interna — 10
+- caso de auditoria interna — 10
+- auditoria interna administrativa y operativa — 10
+- auditoria interna contabilidad — 10
+- auditoria interna control interno — 10
+- auditoria interna coso — 10
+- auditoria interna de cumplimiento — 10
+- auditoria interna de gestion — 10
+- auditoria interna empresa — 10
+- auditoria interna en el sector publico — 10
+- auditoria interna gubernamental — 10
+- auditoria interna internacional — 10
+- auditoria interna norma — 10
+- auditoria interna objetivo — 10
+- auditoria interna operativa — 10
+- auditoria interna para que sirve — 10
+- auditoria interna png — 10
+- auditoria interna que es — 10
+- auditoria interna quien la realiza — 10
+- auditoria interna sgc — 10
+- auditoria interna sistema de gestion de calidad — 10
+- auditoria interna tipos — 10
+- auditoria interna y auditoria externa — 10
+- auditoria interna y externa de calidad — 10
+- auditoria interna y externa de una empresa — 10
+- auditoria interna y externa pdf — 10
+- auditoria internacional — 10
+- auditoria internacional que es — 10
+- auditoria operativa — 10
+- auditoria permanente — 10
+- auditoria s — 10
+- auditoria sgc — 10
+- auditoria tributaria interna — 10
+- auditoria trinorma — 10
+- auditoria y control — 10
+- auditoria y control interno gustavo cepeda pdf — 10
+- auditoria y control interno pdf — 10
+- auditorias agiles — 10
+- auditorias contraloria — 10
+- auditorias de sistemas de informacion — 10
+- auditorias internas externas — 10
+- auditoría del control interno samuel alberto mantilla cuarta edición pdf — 10
+- auditoría del estado — 10
+- auditoría interna en cooperativas — 10
+- auditoría interna juan ramón santillana pdf — 10
+- bdo auditoría — 10
+- control auditoria — 10
+- control de auditoria interna — 10
+- control interno auditool — 10
+- control interno auditoria gubernamental — 10
+- control interno auditoria interna — 10
+- control interno auditoría pdf — 10
+- control interno en auditoria financiera — 10
+- control interno en las cuentas por cobrar — 10
+- control interno y auditoría — 10
+- coso auditoria — 10
+- coso de auditoria — 10
+- el coso en auditoria — 10
+- el auditor debe evaluar el sistema de control interno para — 10
+- formatos de auditoria interna — 10
+- iia auditoria interna — 10
+- la auditoria interna — 10
+- la auditoria interna y externa — 10
+- las auditorias — 10
+- norma auditoria interna 19011 — 10
+- norma de auditoria interna — 10
+- norma internacional de auditoria interna — 10
+- objetivo de auditoria interna — 10
+- objetivo del control interno en auditoria — 10
+- pdf auditoria interna — 10
+- sistema de control interno auditoria — 10
+- sistema de auditoria interna — 10
+- tipos de control auditoria — 10
+- tipos de control interno auditoría — 10
+- tipos de auditoria interna — 10
+- tipos de auditoria interna y externa — 10
+- una auditoria interna al sistema de gestión de calidad — 10
+- auditoria administrativa interna — 10
+- auditoria contable interna — 10
+- auditoria control interno pdf — 10
+- auditoria coso — 10
+- auditoria de calidad interna y externa — 10
+- auditoria de control — 10
+- auditoria de control interno de una empresa — 10
+- auditoria de cuentas por cobrar — 10
+- auditoria de cumplimiento legal — 10
+- auditoria de producción — 10
+- auditoria del control interno samuel mantilla pdf — 10
+- auditoria financiera control interno — 10
+- auditoria financiera forense — 10
+- auditoria financiera interna — 10
+- auditoria 2 — 10
+
+### Auditor interno — ISO certification/career (different intent: training/course, not accounting services)
+This whole bucket (~150 rows) is people researching an ISO auditor certification course
+or job — 9001, 14001, 27001, 45001, 22000, HACCP, IATF, trinorma, SGS, HSEQ, etc. Not
+buyers for accounting-firm audit services; potential separate content vertical
+("cómo ser auditor interno certificado") rather than `/auditoria/` service copy.
+- auditor iso 9001 — 10
+- auditor interno iso 9001 — 10
+- auditoria interna iso 9001 — 10
+- auditor iso 14001 — 10
+- auditoria iso 9001 — 10
+- auditor interno iso 14001 — 10
+- auditor interno iso 27001 — 10
+- auditor interno iso 45001 — 10
+- auditor interno hseq — 10
+- auditor trinorma — 10
+- auditoria iso 14001 — 10
+- auditor líder iso 9001 — 10
+- auditor lider trinorma — 10
+- auditoria compliance — 10
+- auditor hseq — 10
+- auditor interno iso 9001 2015 — 10
+- auditorias internas de calidad — 10
+- auditor interno en sistemas integrados de gestión — 10
+- auditor iso 9001 2015 — 10
+- auditor interno iso — 10
+- auditorias iso 9001 — 10
+- auditor interno iso 22000 — 10
+- auditoria iso 45001 — 10
+- iso 27001 auditor interno — 10
+- auditor forense — 10
+- auditor interno 14001 — 10
+- auditor interno 27001 — 10
+- auditoria iatf — 10
+- auditor lider fssc 22000 — 10
+- auditor control interno — 10
+- auditor de calidad iso 9001 — 10
+- auditor de control interno — 10
+- auditor de iso 9001 — 10
+- auditor de sistemas de gestion — 10
+- auditor externo e interno — 10
+- auditor externo y interno — 10
+- auditor interna — 10
+- auditor interno calidad — 10
+- auditor interno corporativo — 10
+- auditor interno de calidad iso 9001 — 10
+- auditor interno haccp — 10
+- auditor interno integral — 10
+- auditor interno jr — 10
+- auditor interno que es — 10
+- auditor interno que hace — 10
+- auditor interno senior — 10
+- auditor interno sgs — 10
+- auditor lider hseq — 10
+- auditor principal — 10
+- auditor sgsst — 10
+- auditor sst — 10
+- auditores iso — 10
+- auditoria 45001 — 10
+- auditoria 9001 — 10
+- auditoria de calidad iso 9001 version 2015 — 10
+- auditoria de iso 9001 — 10
+- auditoria interna de calidad ntc iso 9001 — 10
+- auditoria interna iso — 10
+- auditoria interna iso 45001 — 10
+- auditoria interna iso 9001 version 2015 — 10
+- auditoria iso 22000 — 10
+- auditoria iso 9001 2015 — 10
+- auditoria iso 9001 version 2015 — 10
+- auditoria norma iso 9001 — 10
+- auditoria trinorma — 10
+- auditorias iatf — 10
+- auditorias internas iso 45001 — 10
+- auditorias internas y externas de calidad — 10
+- auditorias iso 45001 — 10
+- auditorias sgc — 10
+- auditoria sgc — 10
+- auditoría iatf — 10
+- auditoría iso 14001 — 10
+- auditoría iso 9001 — 10
+- capacitaciones para auditores internos — 10
+- auditorias de calidad internas y externas — 10
+- auditorias externas de calidad — 10
+- auditorias contraloria — 10
+- iso 9001 auditor interno — 10
+- iso 9001 auditoria — 10
+- iso 9001 auditorias internas — 10
+- iso auditores — 10
+- iso auditorias internas — 10
+- iso de auditoria interna — 10
+- iso de auditorias — 10
+- instituto auditores internos — 10
+- instituto de auditores — 10
+- instituto de auditores internos iia — 10
+- instituto internacional de auditores — 10
+- instituto internacional de auditores internos — 10
+- instituto mexicano de auditores internos — 10
+- norma iso auditoria interna — 10
+- sgc auditoria — 10
+- sgs auditor interno — 10
+- tipos de auditores internos — 10
+
+## Cluster 5 — Estados financieros / balance general / IRP / formulario 120
+
+### IRP — Impuesto a la Renta Personal (core, has no page yet)
+- irp paraguay — 1600
+- irp en paraguay — 30
+- irp paraguay 2022 — 10
+- irp 2020 paraguay — 10
+- irp 2021 paraguay — 10
+- irp 2022 paraguay — 10
+- irp 2023 paraguay — 10
+- irp paraguay 2021 — 10
+- irp paraguay 2023 — 10
+- irp paraguay quienes pagan — 10
+- irp py — 10
+
+### Formulario 120 / IRE general (DNIT filing forms)
+- formulario 120 — 320
+- ire general — 210
+- formulario 120 para llenar — 50
+- formulario 120 marangatu — 40
+- formulario 120 a interactivo — 10
+- formulario 120 afip — 10
+- formulario 120 editable — 10
+
+### Declaración jurada / liquidación de IVA (filing)
+- declaración de iva — 110
+- declaracion jurada de iva — 30
+- declaración jurada iva — 20
+- ddjj de iva — 20
+- ddjj iva — 10
+- iva declaracion jurada — 10
+
+### Balance general (core term + worked examples)
+- balance general — 480
+- balance general contable — 70
+- contabilidad balance general — 70
+- balance general estado de resultados — 50
+- balance general que es — 40
+- balance contable — 20
+- balance impositivo — 40
+- balance impositivo ejemplos — 10
+- balance impositivo y balance contable — 10
+- balance inicial de una empresa — 10
+- balance general de una empresa — 10
+- balance inicial — 10
+- balance inicial contabilidad — 10
+- balance financiero — 10
+- balance financiero de una empresa — 10
+- balance de situación de una empresa — 10
+- balance cuenta — 10
+- balance de estado de resultados — 10
+- balance de estados financieros — 10
+- balance de flujo de efectivo — 10
+- balance de resultados de una empresa — 10
+- balance de situacion financiera — 10
+- balance financiera — 10
+- balance general 8 columnas — 10
+- balance general activo — 10
+- balance general activo pasivo y capital — 10
+- balance general completo — 10
+- balance general con forma de cuenta — 10
+- balance general con todas las cuentas — 10
+- balance general consolidado — 10
+- balance general cuentas — 10
+- balance general de coca cola — 10
+- balance general de empresas — 10
+- balance general de un hotel — 10
+- balance general de un restaurante — 10
+- balance general de una empresa comercial — 10
+- balance general de una empresa industrial — 10
+- balance general de una empresa peruana — 10
+- balance general de una empresa real — 10
+- balance general de una panaderia — 10
+- balance general empresa — 10
+- balance general empresa comercial — 10
+- balance general en forma de reporte — 10
+- balance general en forma de reporte y cuenta — 10
+- balance general estado de resultados y flujo de efectivo — 10
+- balance general estados financieros — 10
+- balance general estimativo — 10
+- balance general la comercial — 10
+- balance general mensual — 10
+- balance general para que sirve — 10
+- balance general paso a paso — 10
+- balance general presupuestado — 10
+- balance general pro forma — 10
+- balance general proyectado — 10
+- balance general que es y para que sirve — 10
+- balance general que muestra — 10
+- balance general reporte — 10
+- balance general xls — 10
+- balance general y estado de resultados de una empresa — 10
+- balance general y estado de resultados de una empresa comercial — 10
+- balance general y estado de resultados de una empresa real — 10
+- balance patrimonial — 10
+- balance y cuenta de resultados — 10
+- balance y estado de resultados de una empresa — 10
+- balances comparativos — 10
+- balances financieros — 10
+- bbva estados financieros — 10
+- capital balance general — 10
+- capital en balance general — 10
+- capital en el balance general — 10
+- cencosud estados financieros — 10
+- cifi estados financieros — 10
+- coca cola balance general — 10
+- coca cola estados financieros — 10
+- cuenta de balance general — 10
+- cuentas contables del balance general — 10
+- cuentas de balance general y estado de resultados — 10
+- cuentas para balance general — 10
+- cuentas por pagar en el balance general — 10
+- cuentas que conforman el balance general — 10
+- cuentas que van en el balance general — 10
+- activos intangibles en el balance general — 10
+- inversiones en el balance general — 10
+- en el balance general — 10
+- el balance general — 10
+- estado balance general — 10
+- estados de balance general — 10
+- fórmula del balance general — 10
+- analisis balance general — 10
+- analisis de balance general — 10
+- analisis de un balance general — 10
+- analisis del balance general — 10
+- para que es el balance general — 10
+- para que sirve balance general — 10
+- para que sirve el balance general — 10
+- para que sirve el balance general en contabilidad — 10
+- en que consiste el balance general — 10
+
+### Estado de resultados / cuenta de resultados
+- estado de resultados — 260
+- contabilidad estado de resultados — 70
+- estado de resultados contable — 70
+- cuenta de resultados — 10
+- estado de resultado que es — 10
+- estado de resultado como se hace — 10
+- estado de resultado completo — 10
+- estado de resultado clasificado — 10
+- estado de resultado de una empresa — 10
+- estado de resultado de una empresa comercial — 10
+- estado de resultado de una empresa de servicios — 10
+- estado de resultado financiero — 10
+- estado de resultado integral — 10
+- estado de resultado integral y estado de resultados — 10
+- estado de resultado para que sirve — 10
+- estado de resultado presupuestado — 10
+- estado de resultado proforma — 10
+- estado de resultado proyectado — 10
+- estado de resultado y estado de situación financiera — 10
+- estado de resultados balance general — 10
+- estado de resultados basico — 10
+- estado de resultados como hacerlo — 10
+- estado de resultados contabilidad como se hace — 10
+- estado de resultados costos — 10
+- estado de resultados cuentas que lo integran — 10
+- estado de resultados de perdidas y ganancias — 10
+- estado de resultados de un banco — 10
+- estado de resultados de un restaurante — 10
+- estado de resultados en forma de reporte — 10
+- estado de resultados fórmula — 10
+- estado de resultados mensual — 10
+- estado de resultados niif — 10
+- estado de resultados paso a paso — 10
+- estado de resultados por función — 10
+- estado de resultados pro forma — 10
+- estado de resultados restaurante — 10
+- estado de resultados sencillo — 10
+- estados resultados — 10
+- el estado de resultado — 10
+- la cuenta de resultados — 10
+- los estados de resultados — 10
+- cuenta de resultados contabilidad — 10
+- cuenta de estado de resultados — 10
+- cuenta del estado de resultados — 10
+- cuentas de estado de flujo de efectivo — 10
+- cuentas en estado de resultados — 10
+- cuentas que conforman el estado de resultados — 10
+- cuentas que van en el estado de resultados — 10
+- elementos de un estado de resultados — 10
+- elementos del estado de resultados — 10
+- elementos que integran el estado de resultados — 10
+- estado de ganancias y perdidas — 10
+- estado de ganancias y pérdidas proyectado — 10
+- estado resultado contabilidad — 10
+- estado financiero estado de resultados — 10
+- estado financiero y estado de resultados — 10
+- flujo de caja y estado de resultados — 10
+- flujo de efectivo y estado de resultados — 10
+- en que consiste el estado de resultados — 10
+- para que sirve el estado de resultado — 10
+- para que sirve un estado de resultados — 10
+- para que sirve el estado de resultados en contabilidad — 10
+- niif estado de resultados — 10
+
+### Flujo de efectivo (cash flow statement)
+- flujo de efectivo — 70
+- estado de flujo de efectivo — 50
+- flujo de efectivo metodo directo — 10
+- estado de flujo de efectivo como se hace — 10
+- estado de flujo de efectivo contabilidad — 10
+- estado de flujo de efectivo cuentas — 10
+- estado de flujo de efectivo directo — 10
+- estado de flujo de efectivo indirecto — 10
+- estado de flujo de efectivo metodo directo — 10
+- estado de flujo de efectivo metodo directo e indirecto — 10
+- estado de flujo de efectivo metodo indirecto — 10
+- estado de flujo de efectivo metodos — 10
+- estado de flujo de efectivo nic 7 — 10
+- estado de flujo de efectivo para que sirve — 10
+- estado de flujo de efectivo proyectado — 10
+- estado de flujo de efectivo que es — 10
+- estado de flujo de fondos — 10
+- estado de flujo financiero — 10
+- el flujo de efectivo — 10
+- los flujos de efectivo — 10
+- flujo de caja efectivo — 10
+- flujo de caja es igual a flujo de efectivo — 10
+- flujo de caja es lo mismo que flujo de efectivo — 10
+- flujo de caja y flujo de efectivo — 10
+- flujo de efectivo es lo mismo que flujo de caja — 10
+- flujo de efectivo actividades de operación inversión y financiación — 10
+- flujo de efectivo acumulado — 10
+- flujo de efectivo anual — 10
+- flujo de efectivo como se hace — 10
+- flujo de efectivo contabilidad — 10
+- flujo de efectivo de inversion — 10
+- flujo de efectivo de una empresa — 10
+- flujo de efectivo directo — 10
+- flujo de efectivo directo e indirecto — 10
+- flujo de efectivo estado financiero — 10
+- flujo de efectivo financiero — 10
+- flujo de efectivo fórmula — 10
+- flujo de efectivo indirecto — 10
+- flujo de efectivo mensual — 10
+- flujo de efectivo metodo directo e indirecto — 10
+- flujo de efectivo metodo indirecto — 10
+- flujo de efectivo metodos — 10
+- flujo de efectivo método indirecto — 10
+- flujo de efectivo negativo — 10
+- flujo de efectivo neto — 10
+- flujo de efectivo nic 7 — 10
+- flujo de efectivo operativo — 10
+- flujo de efectivo operativo feo — 10
+- flujo de efectivo operativo inversion y financiamiento — 10
+- flujo de efectivo para que sirve — 10
+- flujo de efectivo personal — 10
+- flujo de efectivo por el metodo directo — 10
+- flujo de efectivo positivo — 10
+- flujo de efectivo presupuestado — 10
+- flujo de efectivo proyectado — 10
+- flujo de efectivo que es — 10
+- flujo de efectivo que es y para que sirve — 10
+- flujo de fondo proyectado — 10
+- flujo de fondos financiero — 10
+- flujo de fondos netos — 10
+- flujo de fondos proyectado anual — 10
+- flujos de efectivo de las actividades de inversión — 10
+- flujos de efectivo incrementales — 10
+- flujos de fondos proyectados — 10
+- actividades de financiación flujo de efectivo — 10
+- actividades de financiamiento flujo de efectivo — 10
+- actividades de flujo de efectivo — 10
+- actividades de inversion flujo de efectivo — 10
+- actividades de inversión flujo de efectivo — 10
+- actividades de operación inversión y financiamiento — 10
+- actividades del estado de flujo de efectivo — 10
+- actividades del flujo de efectivo — 10
+- administracion de flujo de efectivo — 10
+- analisis de flujo de efectivo — 10
+- analisis del estado de flujo de efectivo — 10
+- cuentas de flujo de efectivo — 10
+- metodo directo del flujo de efectivo — 10
+- metodos del estado de flujo de efectivo — 10
+- método indirecto flujo de efectivo — 10
+- nic 7 estado de flujo de efectivo — 10
+- nic 7 flujo de efectivo — 10
+- niif flujo de efectivo — 10
+- para que sirve el estado de flujo de efectivo — 10
+- para que sirve el flujo de efectivo — 10
+- para que sirve el flujo de efectivo en una empresa — 10
+- en que consiste el flujo de efectivo — 10
+- estado de cuenta financiero — 10
+
+### Estados financieros — definitional ("qué son", "cuáles son", "elementos de")
+- estados financieros — 260
+- nic 1 — 70
+- analisis financieros — 50
+- analisis de estados financieros — 20
+- eeff contabilidad — 20
+- estado financiero que es — 20
+- informes financieros empresas — 10
+- informes financieros — 10
+- analisis financiero de una empresa — 10
+- estados financieros de una empresa — 10
+- estados financieros basicos — 10
+- reporte financiero — 10
+- informes financieros de empresas — 10
+- informacion financiera — 10
+- estado financiero personal — 10
+- estados financieros contabilidad — 10
+- informes no financieros — 10
+- situacion financiera de una empresa — 10
+- estado de situacion financiera — 10
+- estados financieros consolidados — 10
+- analisis de los estados financieros — 10
+- informacion financiera de una empresa — 10
+- balance financiero de una empresa — 10
+- analisis estados financieros — 10
+- 2 estados financieros — 10
+- 3 estados financieros — 10
+- 4 estados contables — 10
+- 4 estados financieros — 10
+- 4 estados financieros basicos — 10
+- 5 estados financieros — 10
+- 5 estados financieros basicos — 10
+- 5 estados financieros básicos — 10
+- 5 estados financieros niif — 10
+- cinco estados financieros — 10
+- cuatro estados financieros — 10
+- cuatro estados financieros basicos — 10
+- dos estados financieros — 10
+- los 4 estados financieros — 10
+- los 4 estados financieros básicos de contabilidad — 10
+- los 5 estados financieros — 10
+- los cuatro estados financieros — 10
+- los tres estados financieros — 10
+- financieros básicos — 10
+- analisis de eeff — 10
+- analisis de estado de resultados — 10
+- analisis de estados contables — 10
+- analisis de estados financieros de una empresa — 10
+- analisis de estados financieros john j wild — 10
+- analisis de indices financieros — 10
+- analisis de informacion financiera — 10
+- analisis de los estados contables — 10
+- analisis de situacion financiera — 10
+- analisis eeff — 10
+- analisis financiero de un banco — 10
+- analisis financiero empresa — 10
+- analisis financiero empresarial — 10
+- analisis financiero integral — 10
+- analisis financiero para la toma de decisiones — 10
+- analisis financiero que es — 10
+- analisis financiero y sus metodos — 10
+- análisis contable y financiero — 10
+- análisis de estados financieros para otorgar un crédito — 10
+- el analisis financiero — 10
+- metodo de analisis financiero — 10
+- metodos de analisis de estados financieros — 10
+- metodos de estados financieros — 10
+- metodos financieros — 10
+- para que sirve el analisis financiero — 10
+- para que sirve un analisis financiero — 10
+- para que sirven los analisis financieros — 10
+- cuadros financieros — 10
+- posicion financiera — 10
+- estado de posicion financiera — 10
+- estado de rendimiento financiero — 10
+- estado de informacion no financiera — 10
+- estado de información financiera — 10
+- estado informacion no financiera — 10
+- información financiera prospectiva — 10
+- la informacion financiera — 10
+- informacion contable financiera — 10
+- informes de estados financieros — 10
+- informes financieros basicos — 10
+- eeff que es — 10
+- eeff de una empresa — 10
+- eeff consolidados — 10
+- es un estado financiero — 10
+- el estado financiero — 10
+- estado consolidado — 10
+- estado consolidado de resultados — 10
+- estado consolidado de situación financiera — 10
+- estado contable basico — 10
+- estado contable de una empresa — 10
+- estado de cambios en el patrimonio niif — 10
+- estado de capital contable — 10
+- estado de financiero — 10
+- estado de situacion — 10
+- estado de situacion financiera de una empresa comercial — 10
+- estado de situacion financiera que es — 10
+- estado de situación financiera balance general — 10
+- estado de situación patrimonial — 10
+- estado de variaciones de capital contable — 10
+- estado financiero bajo niif — 10
+- estado financiero cuales son — 10
+- estado financiero de coca cola — 10
+- estado financiero de flujo de efectivo — 10
+- estado financiero de un banco — 10
+- estado financiero de una empresa comercial — 10
+- estado financiero de una empresa industrial — 10
+- estado financiero para que sirve — 10
+- estado financiero proyectado — 10
+- estado situacion financiera — 10
+- estados contables consolidados — 10
+- estados contables y financieros — 10
+- estados de contabilidad — 10
+- estados de cuentas contables — 10
+- estados de la contabilidad — 10
+- estados en contabilidad — 10
+- estados financieros 5 — 10
+- estados financieros actuales — 10
+- estados financieros analiticos — 10
+- estados financieros anuales — 10
+- estados financieros bancarios — 10
+- estados financieros basicos de la contabilidad — 10
+- estados financieros basicos en contabilidad — 10
+- estados financieros basicos segun las nif — 10
+- estados financieros clasificados — 10
+- estados financieros colanta — 10
+- estados financieros combinados y consolidados — 10
+- estados financieros comparativos — 10
+- estados financieros complementarios — 10
+- estados financieros consolidados niif — 10
+- estados financieros consolidados y no consolidados — 10
+- estados financieros consolidados y separados — 10
+- estados financieros copec — 10
+- estados financieros cuantos son — 10
+- estados financieros de contabilidad — 10
+- estados financieros de empresas que cotizan en bolsa — 10
+- estados financieros de entidades no lucrativas — 10
+- estados financieros de netflix — 10
+- estados financieros de periodos intermedios — 10
+- estados financieros de proposito especial — 10
+- estados financieros de una constructora — 10
+- estados financieros de una farmacia pequeña — 10
+- estados financieros de una fundacion — 10
+- estados financieros elementos — 10
+- estados financieros fundacion — 10
+- estados financieros individuales — 10
+- estados financieros individuales y consolidados — 10
+- estados financieros interinos — 10
+- estados financieros intermedios — 10
+- estados financieros itau — 10
+- estados financieros latam — 10
+- estados financieros mensuales — 10
+- estados financieros nic 1 — 10
+- estados financieros niif — 10
+- estados financieros niif para pymes — 10
+- estados financieros no consolidados — 10
+- estados financieros obligatorios — 10
+- estados financieros persona fisica — 10
+- estados financieros principales — 10
+- estados financieros pro forma — 10
+- estados financieros proforma — 10
+- estados financieros que son — 10
+- estados financieros que son y para que sirven — 10
+- estados financieros resumidos — 10
+- estados financieros secundarios — 10
+- estados financieros segun las nif — 10
+- estados financieros segun las niif — 10
+- estados financieros segun nic 1 — 10
+- estados financieros separados — 10
+- estados financieros simples — 10
+- elementos basicos de los estados financieros — 10
+- elementos de estado financiero — 10
+- elementos de los estados contables — 10
+- elementos de los estados financieros — 10
+- elementos de los estados financieros niif — 10
+- elementos de un balance general — 10
+- elementos de un estado financiero — 10
+- elementos del balance general — 10
+- elementos del estado de situación financiera — 10
+- elementos del estado financiero — 10
+- elementos financieros — 10
+- elementos financieros de una empresa — 10
+- empresas con estados financieros — 10
+- empresas que publican sus estados financieros — 10
+- en que consisten los estados financieros — 10
+- para que sirve el estado financiero — 10
+- para que sirve un estado financiero — 10
+- para que sirven los estados contables — 10
+- para que sirven los estados financieros — 10
+- los estados contables básicos son — 10
+- los estados financieros — 10
+- los estados financieros basicos — 10
+- los estados financieros básicos son — 10
+- los estados financieros consolidados — 10
+- los estados financieros cuales son — 10
+- los estados financieros en contabilidad — 10
+- los estados financieros principales son — 10
+- los estados financieros que son — 10
+- los principales estados financieros — 10
+- no es un estado financiero básico — 10
+- nic 1 contabilidad — 10
+- nic 1 estados financieros — 10
+- nic 34 información financiera intermedia — 10
+- nic estados financieros — 10
+- nif a3 — 10
+- nif de estados financieros — 10
+- niif 10 — 10
+- niif 10 estados financieros consolidados — 10
+- otros resultados integrales niif — 10
+- cnv estados contables — 10
+- consolidado contabilidad — 10
+- consolidado en contabilidad — 10
+
+### Off-topic noise (not accounting — do not use for copy)
+Keyword Planner's "related terms" expansion pulled these in from an unrelated seed;
+they showed up inside the financial-statements query but have nothing to do with the
+business.
+- cambiar el medidor de luz — 10
+- cambiar medidor de luz — 10
+- cambio titular de la luz — 10
+- estudio del amo vencimientos — 10
+- afip calendario — 10
+- agip vencimientos ingresos brutos — 10
+- calendario vencimientos — 10
+- calendario de vencimiento — 10
+- calendario impositivo — 10
+- cambiar de contador — 10
+
+(The last four are real Paraguayan-accounting terms, not off-topic — flagged here only
+because they were loose, un-clustered singletons in the original export next to the
+noise above.)
