@@ -106,7 +106,7 @@ Exit: `/` and `/servicios/` visually match 1B at 1440 and 390 widths (screenshot
 
 Hard limits (§4.7). Data access only through `src/content/*` and the components A1/A2 built.
 
-### 6.1 B1 — Service pages (13)
+### 6.1 B1 — Service pages (14)
 
 Skills: `paraguay-business-apps`, `nextjs-national-lead-gen` §3.
 

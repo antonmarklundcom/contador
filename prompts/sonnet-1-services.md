@@ -1,4 +1,4 @@
-# Phase B1 — 13 service pages. Paste into a fresh SONNET session, ONLY after phase A2 is merged.
+# Phase B1 — 14 service pages. Paste into a fresh SONNET session, ONLY after phase A2 is merged.
 
 Read `plan.md` FIRST, in full — plus §9 build log and `KNOWN-ISSUES.md`.
 Execute plan §6.1 under the autonomy protocol §4. Build nothing outside the plan.
