@@ -183,7 +183,17 @@ Exit: live site on Hostinger staging URL passes the verification script; Lightho
 
 ## 9. Build log & handoff
 
-(empty — every phase appends before merging)
+### A1 — Foundation · 2026-09-03 · Opus
+
+- Scaffolded Next.js 15 (App Router, TS, Tailwind v4, `src/`) with `trailingSlash: true` and standard output for the Hostinger Node slot. No database, per §1.5.
+- Design tokens transcribed verbatim from the 1b "Guía de estilo" into `src/app/globals.css` (`@theme`); Bricolage Grotesque 400/500/600/800 via `next/font/google`. Primitives: Button, Card, Section/SectionHeader, Pill, Stat, FaqAccordion, Breadcrumbs, StatusPanel, JsonLd.
+- Content model shipped as `src/content/types.ts` — the contract B1–B4 consume unchanged. `services.ts` seeds all 14 services with identity only (slug/path/title/navLabel/cluster/parent); every copy field is empty for B1. `site.ts` is `null` wherever §7 is still pending, with `NEXT_PUBLIC_WHATSAPP_NUMBER`/`_PHONE`/`_EMAIL` overrides so the conversion path switches on without a code change.
+- One dynamic `app/[slug]/page.tsx` serves all 14 service paths including the flat `auditoria-auditoria-*` slugs; explicit routes for `/`, `/servicios/`, `/nosotros/`, `/precios/`, `/contacto/`, `/blog/`, `/blog/[slug]/`, `/herramientas/`, `/privacidad/`, `/terminos/`. Copy-less service pages carry `noindex` and stay out of `sitemap.xml` until B1 fills them — the flag clears itself.
+- Redirect map per §5.1.6: three WordPress leftovers return real `410`s from `src/middleware.ts`; `/?page_id=3` and `/wp-sitemap*.xml` return `301` (explicit `statusCode: 301`, since Next's `permanent: true` emits 308).
+- SEO infra: `pageMetadata()` helper, `sitemap.ts`, `robots.ts`, `opengraph-image.tsx`, and JSON-LD builders for AccountingService/LocalBusiness, BreadcrumbList, FAQPage, Article and Service.
+- `POST /api/lead`: zod-validated, honeypot, per-IP in-memory rate limit, hourly idempotency key, first-touch `vc_attr` attribution, forwards to VenderCRM with the server-only key. With no key it answers `200 {degraded:true}` and the UI keeps offering WhatsApp.
+- `npm run verify` = typecheck + lint + build + `scripts/smoke.mjs`, which boots the built server and asserts 200/301/410 for all 21 scan §2 URLs plus the new routes and both lead-endpoint cases. Green. GitHub Actions runs verify + build on every PR.
+- Deviations recorded in `KNOWN-ISSUES.md`: branch name (harness-pinned), 12px input radius from the style guide over §1.1's 10px, Bricolage as the body face, and 410s rendered by middleware rather than a React route.
 
 ## 10. Backlog
 
