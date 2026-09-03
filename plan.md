@@ -13,7 +13,7 @@ Reference inputs (committed, read them — do not re-scan the live site):
 | A1 | Opus | `prompts/opus-1-foundation.md` | §5.1 | Foundation: scaffold, design system, layout, routes, SEO infra, lead API, deploy config |
 | A2 | Opus | `prompts/opus-2-home.md` | §5.2 | Homepage (1B port) + shared sections + Servicios hub |
 | B1 | Sonnet | `prompts/sonnet-1-services.md` | §6.1 | 12 legacy service pages + new /contabilidad/ and /irp/ pages, rewritten copy |
-| B2 | Sonnet | `prompts/sonnet-2-pages.md` | §6.2 | Nosotros, Contacto, Precios, legal, 404, blog + 4 launch articles |
+| B2 | Sonnet | `prompts/sonnet-2-pages.md` | §6.2 | Nosotros, Contacto, Precios, legal, 404, blog + 5 launch articles |
 | B3 | Sonnet | `prompts/sonnet-3-tools.md` | §6.3 | Tools: aguinaldo calc, liquidación de salario calc, vencimientos calendar, IVA calc, EAS-vs-SRL comparador, "¿Qué necesita?" quiz |
 | B4 | Sonnet | `prompts/sonnet-4-polish-launch.md` | §6.4 | Imagery, performance, a11y, analytics, Hostinger deploy, redirect verification, GBP |
 
@@ -33,7 +33,7 @@ One PR per phase. One fresh session per PR. Phases run in table order; a phase n
 8. **Homepage service framing:** 1B's "cinco servicios" cards map onto the legacy pages. Card → links: Contabilidad mensual → `/contabilidad/` (new page, §6.1); Impuestos: IVA e IRE → `/iva/`, `/ire-simple/`, `/marangatu/`; Nómina → `/ips/`; Apertura de empresas y RUC → `/eas/`, `/ruc/`; Facturación electrónica → `/ekuatia/`. A sixth card "Auditoría" → `/auditoria/` (the legacy silo is real content and ranks; it must stay visible). Asesoría lives in the Impuestos card as secondary link and in the hub.
 9. **Servicios hub `/servicios/`** keeps the three legacy clusters as section headings (Soluciones digitales de cumplimiento / Gestión empresarial / Auditoría) because that grouping is the existing IA and internal-link structure.
 10. **Precios:** `/precios/` becomes a real page with three plans (Emprendedor / Pyme / Empresa) using "desde ₲ X /mes" only if §7 provides numbers; until then plans list scope with "Cotización en 48 h" CTA and no prices. Never USD, never Lorem.
-11. **Blog stays** (`/blog/`), MDX, 4 launch articles written in B2. `/hello-world/` and `/category/uncategorized/` → 410.
+11. **Blog stays** (`/blog/`), MDX, 5 launch articles written in B2. `/hello-world/` and `/category/uncategorized/` → 410.
 
 ## 2. Content model (no DB)
 
@@ -51,7 +51,7 @@ Service record shape is fixed in A1 and consumed unchanged by B1. B-phases may a
 
 ## 3. Feature scope
 
-**Core (A1–B2):** design system, responsive layout, sticky header with services mega-menu, WhatsApp floating button, homepage (1B), Servicios hub, 13 service pages, Nosotros, Contacto with form, Precios, Privacidad, Términos, 404, Blog index + article template + 4 articles, SEO (titles, descriptions, canonical, OG, sitemap, robots, JSON-LD: AccountingService/LocalBusiness, BreadcrumbList, FAQPage, Article), redirects/410s, lead API → VenderCRM, deploy config.
+**Core (A1–B2):** design system, responsive layout, sticky header with services mega-menu, WhatsApp floating button, homepage (1B), Servicios hub, 14 service pages (12 legacy + /contabilidad/ + /irp/), Nosotros, Contacto with form, Precios, Privacidad, Términos, 404, Blog index + article template + 5 articles, SEO (titles, descriptions, canonical, OG, sitemap, robots, JSON-LD: AccountingService/LocalBusiness, BreadcrumbList, FAQPage, Article), redirects/410s, lead API → VenderCRM, deploy config.
 
 **Tools (B3, share one `herramientas/` layout, priority order from keyword data):** calculadora de aguinaldo (≈5 000 searches/mo), calculadora de liquidación de salario / finiquito (5 400/mo), DNIT vencimientos calendar by RUC terminación ("Recordarme por WhatsApp" CTA), IVA calculator (10% / 5% inclusive-exclusive), comparador EAS vs SRL vs Unipersonal, "¿Qué necesita?" 4-question quiz that pre-fills the lead form.
 
@@ -79,8 +79,8 @@ Skills to load: `nodejs-mysql-hostinger-stack` (scaffold conventions only, skip 
 
 1. `create-next-app` (App Router, TS, Tailwind, `src/`), `trailingSlash: true`, `output` standard (Hostinger Node). Scripts: `build`, `start`, `lint`, `typecheck`, `verify` (runs typecheck + lint + a route smoke test that hits every path in §5.1.6 on a built server and asserts 200/301/410).
 2. Design system from 1B: Tailwind theme tokens (colors, radii, shadows), `next/font` Bricolage Grotesque (weights 400/500/600/800), base typography scale, `Button` (primary amber, secondary outline, whatsapp green), `Card`, `Section` (with eyebrow/title/lead), `Pill`, `Stat`, `FaqAccordion` (native `<details>`), `Breadcrumbs`, `StatusPanel` (the "Panel del cliente" mock from the hero, generic labels, no client name).
-3. Layout: `Header` (logo wordmark "contador.com.py", nav: Servicios mega-menu with the three clusters + Nosotros, Precios, Blog, Contacto; right side WhatsApp pill + "Pedir cotización" amber button), mobile drawer, `Footer` (4 columns as 1B: firm blurb, Servicios (all 13), Firma, Contacto with NAP), `WhatsAppFab`. Skip links, focus styles, `lang="es-PY"`.
-4. Content model (§2) with types, `site.ts` filled from §7 or `null`s, `services.ts` seeded with slug/path/title/cluster/navLabel for all 13 services (copy fields empty; B1 fills them). `ui.ts` strings.
+3. Layout: `Header` (logo wordmark "contador.com.py", nav: Servicios mega-menu with the three clusters + Nosotros, Precios, Blog, Contacto; right side WhatsApp pill + "Pedir cotización" amber button), mobile drawer, `Footer` (4 columns as 1B: firm blurb, Servicios (all 14), Firma, Contacto with NAP), `WhatsAppFab`. Skip links, focus styles, `lang="es-PY"`.
+4. Content model (§2) with types, `site.ts` filled from §7 or `null`s, `services.ts` seeded with slug/path/title/cluster/navLabel for all 14 services (copy fields empty; B1 fills them). `ui.ts` strings.
 5. Routing: a single dynamic `app/[slug]/page.tsx` that resolves against `services.ts` and static pages by slug (so every legacy flat path is served by one template), plus explicit routes for `/`, `/servicios/`, `/blog/`, `/blog/[slug]/`, `/precios/`, `/contacto/`, `/nosotros/`, `/privacidad/`, `/terminos/`, `/herramientas/*` (placeholders). `generateStaticParams` for all.
 6. Redirect/410 map in `next.config` + `middleware` where needed: `/single-service/` → 410, `/hello-world/` → 410, `/category/uncategorized/` → 410, `/?page_id=3` → 301 `/privacidad/`, `/wp-sitemap.xml` → 301 `/sitemap.xml`, `/auditoria-auditoria-*` unchanged (canonical, no redirect).
 7. SEO infra: `generateMetadata` helper (title template, description, canonical from `NEXT_PUBLIC_SITE_URL`, OG defaults), `sitemap.ts`, `robots.ts`, JSON-LD helpers (`AccountingService` + `LocalBusiness` from `site.ts`, `BreadcrumbList`, `FAQPage`, `Article`), default OG image route.
@@ -96,7 +96,7 @@ Skills: `nextjs-national-lead-gen` (§4 pattern menu), `paraguay-business-apps` 
 1. Port 1B section by section, in order: Hero (eyebrow pill, H1, lead, two CTAs, three stats from `site.stats` or hidden, `StatusPanel`), Servicios (6 cards per §1.8, numbered 01–06, "¿No sabe qué necesita?" strip), Credibilidad (two photo slots + "14 años" badge only if `foundedYear`; four ✓ bullets from `site.credentials`), Proceso (4 steps), Casos (testimonials, hidden when empty; if hidden, replace with a "Rubros que atendemos" strip: comercio, servicios, construcción, importación, profesionales, gastronomía), Contacto (split: copy + WhatsApp + NAP left, `LeadForm` right), Footer already from A1.
 2. Match 1B spacing (88px section padding desktop, 64px gutters → responsive), type scale, card style. Mobile: single column, hero panel below copy, sticky bottom WhatsApp bar.
 3. Extract `ProcessSection`, `CtaBand`, `ServiceCardGrid`, `TestimonialsSection`, `IndustriesStrip` as reusable components (B-phases reuse them on service pages).
-4. `/servicios/` hub: hero, three cluster sections each with `ServiceCardGrid` of its services (all 13 including `/contabilidad/` under Gestión empresarial), process, CTA band.
+4. `/servicios/` hub: hero, three cluster sections each with `ServiceCardGrid` of its services (all 14 including `/contabilidad/` and `/irp/` under Gestión empresarial), process, CTA band.
 5. Homepage SEO: title "Contador en Asunción | Estudio contable para pymes | Contador.com.py", description, `AccountingService` JSON-LD, OG image.
 6. Copy: rewrite from scan §4.1 + 1B. Keep the H1 concept "Estudio contable y contabilidad en Paraguay" as keyword anchor but use 1B's promise headline; example: H1 "Estudio contable en Asunción: impuestos, contabilidad y nómina sin llegar tarde".
 
