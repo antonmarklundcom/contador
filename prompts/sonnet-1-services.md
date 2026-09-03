@@ -12,11 +12,11 @@ Phase rules:
 - Source copy = `docs/reference/site-scan-2026-09-02.md` §3 (verbatim legacy text). REWRITE it: "usted", tighter,
   600–900 words per page, keyword-first H1 that still contains the legacy title label. Never paste paragraphs verbatim.
 - Fix the three copy-paste bugs in scan §6.9 with genuinely new passages (EAS closing CTA; Auditoría Impositiva benefits; Auditoría Forense FAQ 3).
-- Write the new `/contabilidad/` page from scratch (plan §6.1.3).
+- Write the new `/contabilidad/` and `/irp/` pages from scratch (plan §6.1.3, 3b) and the Guía blocks on Marangatu/Ekuatia/IRE (§6.1.3c). Read `docs/keyword-research.md` first for the H2 targets.
 - Every page: unique title ≤ 60 chars, unique description 120–155 chars, FAQ (3–5) with `FAQPage` JSON-LD, 3 related services, service-specific WhatsApp prefill text.
 - Re-runnable; minor issues → `KNOWN-ISSUES.md`; stop only per §4.4.
 
-Exit: all 13 service URLs render full copy; `FAQPage` JSON-LD validates on each; no duplicate titles/descriptions
+Exit: all 14 service URLs render full copy; `FAQPage` JSON-LD validates on each; no duplicate titles/descriptions
 (add a check to `verify`); `npm run verify` green; PR merged.
 
 ## After this phase

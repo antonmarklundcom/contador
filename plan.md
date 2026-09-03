@@ -5,15 +5,16 @@ Replace the WordPress/Elementor site at contador.com.py with a bespoke Next.js s
 Reference inputs (committed, read them — do not re-scan the live site):
 
 - `docs/reference/site-scan-2026-09-02.md` — full inventory of the live site: nav, all 21 URLs, verbatim copy of every service page, gaps and copy bugs.
+- `docs/keyword-research.md` — Keyword Planner data (2026-09) and the eight plan changes it drove.
 - `docs/reference/design-canvas-home.dc.html` — design canvas. Build **only** option `1b` (the `<div class="dv-opt" id="1b">` block, lines ~155–300, plus its "Guía de estilo"). Ignore 1a, 1c, 2a, 2b.
 
 | Phase | Model | Prompt file | Plan sections | PR |
 |---|---|---|---|---|
 | A1 | Opus | `prompts/opus-1-foundation.md` | §5.1 | Foundation: scaffold, design system, layout, routes, SEO infra, lead API, deploy config |
 | A2 | Opus | `prompts/opus-2-home.md` | §5.2 | Homepage (1B port) + shared sections + Servicios hub |
-| B1 | Sonnet | `prompts/sonnet-1-services.md` | §6.1 | 12 legacy service pages + new /contabilidad/ page, rewritten copy |
+| B1 | Sonnet | `prompts/sonnet-1-services.md` | §6.1 | 12 legacy service pages + new /contabilidad/ and /irp/ pages, rewritten copy |
 | B2 | Sonnet | `prompts/sonnet-2-pages.md` | §6.2 | Nosotros, Contacto, Precios, legal, 404, blog + 4 launch articles |
-| B3 | Sonnet | `prompts/sonnet-3-tools.md` | §6.3 | Tools: vencimientos calendar, IVA calc, EAS-vs-SRL comparador, "¿Qué necesita?" quiz |
+| B3 | Sonnet | `prompts/sonnet-3-tools.md` | §6.3 | Tools: aguinaldo calc, liquidación de salario calc, vencimientos calendar, IVA calc, EAS-vs-SRL comparador, "¿Qué necesita?" quiz |
 | B4 | Sonnet | `prompts/sonnet-4-polish-launch.md` | §6.4 | Imagery, performance, a11y, analytics, Hostinger deploy, redirect verification, GBP |
 
 One PR per phase. One fresh session per PR. Phases run in table order; a phase never starts on top of an unmerged previous phase.
@@ -52,7 +53,7 @@ Service record shape is fixed in A1 and consumed unchanged by B1. B-phases may a
 
 **Core (A1–B2):** design system, responsive layout, sticky header with services mega-menu, WhatsApp floating button, homepage (1B), Servicios hub, 13 service pages, Nosotros, Contacto with form, Precios, Privacidad, Términos, 404, Blog index + article template + 4 articles, SEO (titles, descriptions, canonical, OG, sitemap, robots, JSON-LD: AccountingService/LocalBusiness, BreadcrumbList, FAQPage, Article), redirects/410s, lead API → VenderCRM, deploy config.
 
-**Tools (B3, chain together, share one `tools/` layout):** DNIT vencimientos calendar by RUC terminación (shows this month's IVA/IRE/IPS dates, "Recordarme por WhatsApp" CTA), IVA calculator (10% / 5% inclusive-exclusive), comparador EAS vs SRL vs Unipersonal, "¿Qué necesita?" 4-question quiz that pre-fills the lead form.
+**Tools (B3, share one `herramientas/` layout, priority order from keyword data):** calculadora de aguinaldo (≈5 000 searches/mo), calculadora de liquidación de salario / finiquito (5 400/mo), DNIT vencimientos calendar by RUC terminación ("Recordarme por WhatsApp" CTA), IVA calculator (10% / 5% inclusive-exclusive), comparador EAS vs SRL vs Unipersonal, "¿Qué necesita?" 4-question quiz that pre-fills the lead form.
 
 **Polish (B4):** imagery via Higgsfield (illustrative only, no captioned identity claims), Lighthouse ≥ 95 mobile, a11y pass, GA4 + Google Ads conversion events (whatsapp_click, lead_submit, tool_used), Hostinger deploy, DNS cutover checklist, GBP link and NAP consistency.
 
@@ -111,11 +112,13 @@ Skills: `paraguay-business-apps`, `nextjs-national-lead-gen` §3.
 
 1. Service page template (in `app/[slug]/page.tsx` via a `ServicePage` component): Breadcrumbs (Inicio › Servicios › [Cluster] › Title; audit children add › Auditoría), hero (eyebrow = cluster, H1 = legacy title enriched, H2 = descriptive headline, lead, CTA pair), "Qué incluye" checklist, body sections (2–4, from the scan's real content, rewritten), Beneficios (3–4 cards), Proceso (reuse), FAQ (3–5, accordion + `FAQPage` JSON-LD), related services (3), CTA band with service-specific WhatsApp prefill text.
 2. Fill `services.ts` for all 12 legacy pages from scan §3, rewriting in "usted", tightening to ~600–900 words each, fixing scan §6.9 bugs (EAS closing CTA, Auditoría Impositiva benefits, Auditoría Forense FAQ 3). Keep the legacy H1 label visible in the H1 (e.g. "Marangatu: gestión de su cuenta ante la DNIT").
-3. New page `/contabilidad/` "Contabilidad mensual" (cluster: Gestión empresarial) — the 1B service 01 has no legacy page; write it fresh: libros, conciliaciones, estados financieros, cierre antes del día 5, informe mensual.
+3. New page `/contabilidad/` "Contabilidad mensual" (cluster: Gestión empresarial) — the 1B service 01 has no legacy page; write it fresh: libros, conciliaciones, estados financieros (H2s for balance general, estado de resultados, flujo de efectivo), cierre antes del día 5, informe mensual.
+3b. New page `/irp/` "IRP — Impuesto a la Renta Personal" (cluster: Gestión empresarial): quiénes deben inscribirse, rangos, deducciones, presentación anual, servicio de liquidación. 1 600 searches/mo with zero legacy coverage.
+3c. `/marangatu/` and `/ekuatia/` get a "Guía rápida" block (cómo ingresar, recuperar clave, errores frecuentes) because both terms are navigational giants; `/marangatu/` also gets an H2 "Certificado de Cumplimiento Tributario" (fastest-growing query). `/ire-simple/` gets H2s for Resimple, IRE General and Formulario 120.
 4. `/auditoria/` sub-hub: keeps the 3 child cards.
 5. Unique title/description per page (§4.11), sibling links, `related[]` filled.
 
-Exit: 13 service URLs render with full copy, FAQ JSON-LD validates, no page shares a title or description, `verify` green, PR merged.
+Exit: 14 service URLs render with full copy, FAQ JSON-LD validates, no page shares a title or description, `verify` green, PR merged.
 
 ### 6.2 B2 — Secondary pages + blog
 
@@ -124,21 +127,23 @@ Exit: 13 service URLs render with full copy, FAQ JSON-LD validates, no page shar
 3. `/precios/` per §1.10.
 4. `/privacidad/`, `/terminos/`: real Spanish legal text for a Paraguayan accounting firm (Ley 6534/2020 data protection reference, confidentiality of tax credentials), dated.
 5. `not-found.tsx` with search-free helpful links.
-6. Blog: `/blog/` index (cards), `/blog/[slug]/` article template with Article JSON-LD, author = firm, reading time, related services. Four launch articles (900–1300 words each, "usted"): "Calendario de vencimientos DNIT 2026: IVA, IRE e IPS por terminación de RUC"; "IRE Simple vs Resimple: cuál le corresponde"; "Cómo habilitarse en SIFEN y emitir factura electrónica (E-kuatia)"; "Abrir una EAS en Paraguay: pasos, costos y plazos".
+6. Blog: `/blog/` index (cards), `/blog/[slug]/` article template with Article JSON-LD, author = firm, reading time, related services. Five launch articles (900–1300 words each, "usted"): "Cómo se calcula el aguinaldo en Paraguay (con ejemplos)"; "IRE Simple vs Resimple vs IRE General: cuál le corresponde y el Formulario 120"; "Cómo habilitarse en SIFEN y emitir factura electrónica (E-kuatia)"; "Cómo obtener el Certificado de Cumplimiento Tributario en Marangatu"; "Abrir una EAS en Paraguay: pasos, costos y plazos". Each article links to its calculator/service.
 7. Footer legal links and social links only render when set.
 
-Exit: all pages above 200 with unique metadata, blog index shows 4 posts, `verify` green, PR merged.
+Exit: all pages above 200 with unique metadata, blog index shows 5 posts, `verify` green, PR merged.
 
 ### 6.3 B3 — Tools
 
-1. `/herramientas/` index + four tools, each a client component inside the A1 layout, each with its own SEO page copy (200–300 words) and a CTA that opens `LeadForm` prefilled with the tool result.
+1. `/herramientas/` index + six tools, each a client component inside the A1 layout, each with its own SEO page copy (200–300 words) and a CTA that opens `LeadForm` prefilled with the tool result. Build in this order (keyword volume): aguinaldo, liquidación de salario, vencimientos, IVA, comparador, quiz.
+1b. Calculadora de aguinaldo (`/herramientas/calculadora-aguinaldo/`): salarios percibidos por mes del año (12 inputs or "mismo salario todos los meses"), result = suma/12 in ₲, note on proporcional for altas/bajas. Rules table in `src/content/laboral.ts` with `lastReviewed`.
+1c. Calculadora de liquidación de salario / finiquito (`/herramientas/liquidacion-de-salario/`): fecha ingreso/egreso, salario, motivo (renuncia / despido injustificado / justificado), output: salario proporcional, vacaciones proporcionales, aguinaldo proporcional, preaviso, indemnización (Código del Trabajo art. 91 y ss.). Show a "valores orientativos" disclaimer and the WhatsApp CTA.
 2. Vencimientos: input RUC terminación (0–9), output this month's and next month's dates for IVA mensual, IRE (annual), IPS; data table in `src/content/vencimientos.ts` with a `lastReviewed` date shown on page. Plain rule table, no scraping.
 3. IVA calculator: monto, tipo (10% / 5% / exento), incluido/excluido; guaraní formatting via `paraguay-business-apps` §1.
 4. Comparador EAS / SRL / Unipersonal: static comparison table + "cuál le conviene" 3-question mini-quiz.
 5. "¿Qué necesita?" quiz (4 steps) → recommends services (links) + prefilled lead form.
 6. Analytics events `tool_used` (name) via the A1 analytics helper (no-op until GA id set).
 
-Exit: four tools work with keyboard only, no console errors, `verify` green, PR merged.
+Exit: six tools work with keyboard only, no console errors, `verify` green, PR merged.
 
 ### 6.4 B4 — Imagery, polish, launch
 
@@ -174,7 +179,7 @@ Exit: live site on Hostinger staging URL passes the verification script; Lightho
 
 - Do we want a client portal (real "Panel del cliente") later? The hero mock hints at it; a login is out of scope now.
 - Second language (English for foreign investors opening companies in Paraguay)? The i18n layer allows it later.
-- Google Ads campaign structure per service cluster (see keyword list in the planning chat).
+- Google Ads campaign structure: see `docs/keyword-research.md` §Ads shortlist.
 
 ## 9. Build log & handoff
 
