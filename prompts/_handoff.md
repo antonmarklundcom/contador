@@ -3,7 +3,7 @@
 Hand off ONLY when all four gates pass:
 1. This phase's PR is merged green.
 2. Every exit criterion in the prompt is checked.
-3. Pre-handoff audit done: re-run `npm run verify` and `npm run build` on main, adversarially re-read your own merged diff, fix findings in a follow-up commit if needed.
+3. Pre-handoff audit done: re-run `./verify.sh` and `deploy/make-zip.sh` on main, adversarially re-read your own merged diff, fix findings in a follow-up commit if needed.
 4. Build-log entry (plan.md §9, 5–10 dated lines) committed and pushed.
 
 Then spawn the next phase as a NEW session with the claude-code-remote `create_session` tool:
