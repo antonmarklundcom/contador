@@ -8,6 +8,7 @@ Monthly searches (Paraguay), YoY change, competition, top-of-page bid low/high i
 |---|---|---|---|---|---|
 | marangatu | 165 000 | 0 % | low | 50–98 kr | navigational (DNIT login) |
 | ekuatia | 33 100 | +22 % | low | 2.7–7.7 kr | navigational / how-to |
+| ekuatia i | 22 200 | +22 % | low | 3.3–5.3 kr | navigational (SIFEN e-invoicing portal) |
 | liquidacion de salario | 5 400 | −18 % | low | 4.8–11.2 kr | tool / how-to |
 | sifen | 2 900 | 0 % | low | 2.3–5.8 kr | informational |
 | inscripción ruc | 2 400 | +50 % | low | — | how-to / service |
@@ -35,7 +36,11 @@ Monthly searches (Paraguay), YoY change, competition, top-of-page bid low/high i
 
 Near zero (≤ 10/mo): contador público paraguay, contabilidad para pymes, honorarios contador, sacar ruc, actualizar ruc, planilla ips, liquidación de sueldos, asesoría tributaria, planificación fiscal, calendario vencimientos, cambiar de contador, contador para emprendedores, servicios contables para pymes.
 
-Not yet checked: contador asunción, contador en asunción, apertura de empresa paraguay, constituir srl paraguay, abrir eas, timbrado dnit, habilitación sifen, vencimientos dnit, planilla mtess, auditoría externa paraguay, contador para unipersonal, contador para importadores.
+Resolved from the second export: `abrir eas` — 140/mo, low competition (modest but real, worth a section); `auditoría externa paraguay` — 10/mo (negligible, no dedicated page needed).
+
+Still not checked: contador asunción, contador en asunción, apertura de empresa paraguay, constituir srl paraguay, timbrado dnit, habilitación sifen, vencimientos dnit, planilla mtess, contador para unipersonal, contador para importadores.
+
+Second export also confirmed no new clusters beyond the above — see `docs/reference/kwp-export-2026-09-03-batch2.md` for the full keyword/volume breakdown (estudio contable brand searches, the aguinaldo/liquidación long tail, and financial-statement terms all reinforce the existing plan rather than changing it).
 
 ## What this changes in the plan
 
@@ -47,3 +52,5 @@ Not yet checked: contador asunción, contador en asunción, apertura de empresa 
 6. **Financial-statement terms** (balance general, estados financieros, estado de resultados, flujo de efectivo) support the new `/contabilidad/` page and one explainer article.
 7. **Ads shortlist, exact/phrase:** estudio contable, factura electrónica paraguay (+ variants), sifen, inscripción ruc, liquidacion de salario, ire simple, irp paraguay, certificado cumplimiento tributario, multas dnit, auditoría interna. Landing pages exist for all of them after B1.
 8. **Low-volume commercial terms** (cambiar de contador, honorarios contador, contabilidad para pymes) still get pages/sections because they convert, but they are not Ads targets.
+9. **`ekuatia i` is a second navigational giant** (22 200/mo, +22 % YoY) alongside `ekuatia` itself — the `/ekuatia/` page's H1/H2s and Guía block should explicitly cover "Ekuatia i" (the SIFEN e-invoicing portal name), not just the bare brand term.
+10. **`abrir eas`** (140/mo) gets a short section on the company-formation content (EAS = Empresa por Acciones Simplificada) — real but modest demand, not an Ads target.
